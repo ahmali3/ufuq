@@ -28,7 +28,7 @@ class SettingsPage(private val activity: Activity, private val prefs: Prefs) {
         view.addView(body, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
     }
 
-    fun refresh() = with(activity) {
+    fun refresh(): Unit = with(activity) {
         body.removeAllViews()
         body.addView(text(getString(R.string.settings_title), 28f, Palette.INK, Fonts.bold))
 
@@ -102,7 +102,7 @@ class SettingsPage(private val activity: Activity, private val prefs: Prefs) {
         }
     }
 
-    private fun chooseAsr() = with(activity) {
+    private fun chooseAsr(): Unit = with(activity) {
         val items = arrayOf(getString(R.string.asr_standard_desc), getString(R.string.asr_hanafi_desc))
         AlertDialog.Builder(this)
             .setTitle(R.string.row_asr)
@@ -115,7 +115,7 @@ class SettingsPage(private val activity: Activity, private val prefs: Prefs) {
             .show()
     }
 
-    private fun chooseHighLat() = with(activity) {
+    private fun chooseHighLat(): Unit = with(activity) {
         val items = arrayOf(getString(R.string.hl_angle), getString(R.string.hl_middle), getString(R.string.hl_seventh))
         val order = listOf(HighLatitudeRule.ANGLE_BASED, HighLatitudeRule.MIDDLE_OF_NIGHT, HighLatitudeRule.ONE_SEVENTH)
         AlertDialog.Builder(this)
@@ -129,7 +129,7 @@ class SettingsPage(private val activity: Activity, private val prefs: Prefs) {
             .show()
     }
 
-    private fun chooseTimeFormat() = with(activity) {
+    private fun chooseTimeFormat(): Unit = with(activity) {
         val order = listOf(TimeFormat.SYSTEM, TimeFormat.H12, TimeFormat.H24)
         val items = arrayOf(
             getString(R.string.tf_system, getString(if (DateFormat.is24HourFormat(this)) R.string.tf_24 else R.string.tf_12)),

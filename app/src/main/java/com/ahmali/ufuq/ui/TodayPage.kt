@@ -32,7 +32,7 @@ class TodayPage(
         view.addView(body, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
     }
 
-    fun refresh() = with(activity) {
+    fun refresh(): Unit = with(activity) {
         body.removeAllViews()
         val place = prefs.currentPlace()
         val method = methodShort(prefs.method)
@@ -137,7 +137,7 @@ class TodayPage(
     }
 
     /** A gentle, one-time rating prompt after a week of use; only if a store can open it. */
-    private fun maybeReviewCard() = with(activity) {
+    private fun maybeReviewCard(): Unit = with(activity) {
         if (prefs.reviewPromptDone) return@with
         if (LocalDate.now().toEpochDay() - prefs.firstOpenDay < 7) return@with
         val market = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName"))
