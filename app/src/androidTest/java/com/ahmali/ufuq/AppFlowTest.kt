@@ -226,6 +226,8 @@ class AppFlowTest {
         }
 
         override fun matchesSafely(item: View): Boolean {
+            // Lists get rebuilt (e.g. search results), so forget a view that has left the screen.
+            if (found?.isAttachedToWindow == false) found = null
             if (found == null && matcher.matches(item)) found = item
             return item === found
         }
