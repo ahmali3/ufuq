@@ -35,8 +35,6 @@ import com.ahmali.ufuq.ui.NotificationsActivity
 import com.ahmali.ufuq.ui.WelcomeActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
-import org.hamcrest.Matchers.allOf
-import org.hamcrest.Matchers.not
 import org.hamcrest.Matchers.startsWith
 import org.hamcrest.TypeSafeMatcher
 import org.junit.Assert.assertTrue
@@ -82,15 +80,16 @@ class AppFlowTest {
             shot("01_welcome")
             onView(withText(s(R.string.choose_city_instead))).perform(click())
             onView(isAssignableFrom(EditText::class.java)).perform(replaceText("Surrey"), closeSoftKeyboard())
-            val result = first(allOf(withText("Surrey"), not(isAssignableFrom(EditText::class.java))))
-            waitFor(result, 20_000)
+            // The result row's accessibility label is unique ("South Surrey", "Surrey City Centre" differ).
+            val result = withContentDescription("Surrey, British Columbia, Canada")
+            waitFor(result, 30_000)
             shot("02_city_search")
             onView(result).perform(click())
             waitFor(withText(s(R.string.how_calculated)))
             shot("03_choose_method")
             onView(withText(s(R.string.method_isna))).perform(scrollTo(), click())
             onView(withText(s(R.string.continue_))).perform(click())
-            waitFor(first(withText(startsWith("Surrey"))))
+            waitFor(withText(startsWith("Surrey")))
             waitFor(withText(s(R.string.prayer_isha)))
             shot("04_today_isna")
             assertTrue(Prefs(ctx).onboarded)
@@ -133,8 +132,8 @@ class AppFlowTest {
         seed(CalculationMethod.ISNA)
         ActivityScenario.launch(MonthActivity::class.java).use {
             waitFor(withText(s(R.string.month_title)))
-            waitFor(first(withText(s(R.string.prayer_asr))))
-            waitFor(first(withText(s(R.string.prayer_isha))))
+            waitFor(withText(s(R.string.prayer_asr)))
+            waitFor(withText(s(R.string.prayer_isha)))
             shot("10_timetable_isna")
         }
     }
@@ -155,9 +154,9 @@ class AppFlowTest {
         seed()
         ActivityScenario.launch(CityActivity::class.java).use {
             onView(isAssignableFrom(EditText::class.java)).perform(replaceText("Kerbala"), closeSoftKeyboard())
-            waitFor(first(withText("Karbala")), 20_000)
+            waitFor(withContentDescription(startsWith("Karbala,")), 30_000)
             onView(isAssignableFrom(EditText::class.java)).perform(replaceText("كربلاء"), closeSoftKeyboard())
-            waitFor(first(withText("Karbala")), 20_000)
+            waitFor(withContentDescription(startsWith("Karbala,")), 30_000)
             shot("12_arabic_search")
         }
     }
@@ -217,7 +216,7 @@ class AppFlowTest {
         throw AssertionError("Timed out waiting for view", last)
     }
 
-    /** Matches only the first view (in traversal order) that matches [matcher]. */
+    /** Matches only the first view (in traversal order) that matches [matcher]. Use a fresh one per check. */
     private fun first(matcher: Matcher<View>): Matcher<View> = object : TypeSafeMatcher<View>() {
         private var found: View? = null
         override fun describeTo(description: Description) {
