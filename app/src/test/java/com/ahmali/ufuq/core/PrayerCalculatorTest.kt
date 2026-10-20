@@ -83,13 +83,15 @@ class PrayerCalculatorTest {
 
     @Test
     fun daylightSavingTransitionUsesCorrectOffsets() {
-        val zone = ZoneId.of("America/Vancouver")
-        val before = PrayerCalculator.compute(LocalDate.of(2026, 10, 31), 49.1913, -122.849, zone, CalcSettings())
-        val after = PrayerCalculator.compute(LocalDate.of(2026, 11, 1), 49.1913, -122.849, zone, CalcSettings())
+        // Toronto falls back on 1 Nov 2026. (British Columbia stays on UTC-7 from that date,
+        // so Vancouver no longer has an autumn change.)
+        val zone = ZoneId.of("America/Toronto")
+        val before = PrayerCalculator.compute(LocalDate.of(2026, 10, 31), 43.6532, -79.3832, zone, CalcSettings())
+        val after = PrayerCalculator.compute(LocalDate.of(2026, 11, 1), 43.6532, -79.3832, zone, CalcSettings())
         val fajrBefore = before[Prayer.FAJR]!!
         val fajrAfter = after[Prayer.FAJR]!!
-        assertEquals(ZoneOffset.ofHours(-7), fajrBefore.offset)
-        assertEquals(ZoneOffset.ofHours(-8), fajrAfter.offset)
+        assertEquals(ZoneOffset.ofHours(-4), fajrBefore.offset)
+        assertEquals(ZoneOffset.ofHours(-5), fajrAfter.offset)
         // Real (UTC) Fajr moves ~1.5 min later; the clock reading jumps back about an hour.
         val utcShift = Duration.between(fajrBefore.toInstant(), fajrAfter.toInstant()).toMinutes() - 24 * 60
         assertTrue("utc shift $utcShift", utcShift in 0..3)
