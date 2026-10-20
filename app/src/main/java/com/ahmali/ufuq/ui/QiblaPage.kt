@@ -109,6 +109,7 @@ class QiblaPage(
         val turn = Qibla.turn(heading.toDouble(), bearing)
         val deg = abs(turn).roundToInt()
         val facing = abs(turn) <= 3.0
+        c.facing = facing
         instruction?.let {
             val textNow = when {
                 facing -> activity.getString(R.string.facing_qibla)
