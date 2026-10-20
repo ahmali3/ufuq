@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ufuq</string>
+    <string name="app_name_ar">أفق</string>
+    <string name="back">Back</string>
+
+    <!-- Tabs -->
+    <string name="tab_today">Today</string>
+    <string name="tab_qibla">Qibla</string>
+    <string name="tab_settings">Settings</string>
+
+    <!-- Prayers -->
+    <string name="prayer_fajr">Fajr</string>
+    <string name="prayer_sunrise">Sunrise</string>
+    <string name="prayer_dhuhr">Dhuhr</string>
+    <string name="prayer_asr">Asr</string>
+    <string name="prayer_sunset">Sunset</string>
+    <string name="prayer_maghrib">Maghrib</string>
+    <string name="prayer_isha">Isha</string>
+    <string name="prayer_midnight">Midnight</string>
+
+    <!-- Today -->
+    <string name="loc_auto">AUTO</string>
+    <string name="loc_manual">MANUAL</string>
+    <string name="loc_change">Change location</string>
+    <string name="next">NEXT</string>
+    <string name="in_h_min">in %1$d h %2$d min</string>
+    <string name="in_min">in %1$d min</string>
+    <string name="in_less_min">in less than a minute</string>
+    <string name="date_method">%1$s · %2$s</string>
+    <string name="sunrise_at">Sunrise %1$s</string>
+    <string name="sunset_at">Sunset %1$s</string>
+    <string name="no_sunrise">The sun doesn\'t rise or set here today</string>
+    <string name="timetable_link">30-day timetable →</string>
+    <string name="disclaimer_short">Times are calculated estimates and may differ from your local mosque or scholar. Please verify and use at your own discretion.</string>
+    <string name="finding_city">Finding your city…</string>
+    <string name="need_city_title">Choose your city</string>
+    <string name="need_city_body">Ufuq needs your location or a city to show prayer times and the Qibla.</string>
+    <string name="choose_city">Choose a city</string>
+    <string name="use_location">Use my location</string>
+    <string name="time_not_today">—</string>
+    <string name="review_title">Enjoying Ufuq?</string>
+    <string name="review_body">A quick rating helps others find it.</string>
+    <string name="review_rate">Rate it</string>
+    <string name="review_later">Not now</string>
+
+    <!-- Qibla -->
+    <string name="turn_right">Turn right %1$d°</string>
+    <string name="turn_left">Turn left %1$d°</string>
+    <string name="facing_qibla">Facing Qibla</string>
+    <string name="hold_flat">Hold the phone flat</string>
+    <string name="qibla_info">Qibla %1$s° · %2$s km</string>
+    <string name="accuracy_high">Compass accuracy: high</string>
+    <string name="accuracy_medium">Compass accuracy: medium</string>
+    <string name="accuracy_low">Compass accuracy: low</string>
+    <string name="calibrate">Move your phone in a figure-8 to calibrate</string>
+    <string name="keep_away">Keep away from metal and magnets for accuracy.</string>
+    <string name="no_compass">This phone has no compass. The Qibla is %1$s° clockwise from true north.</string>
+    <string name="compass_desc">Compass dial with the Qibla marker</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="section_location">LOCATION</string>
+    <string name="section_prayer_times">PRAYER TIMES</string>
+    <string name="section_general">GENERAL</string>
+    <string name="row_city">City</string>
+    <string name="city_auto_value">Auto · %1$s</string>
+    <string name="city_auto_unknown">Auto</string>
+    <string name="row_method">Calculation method</string>
+    <string name="row_asr">Asr</string>
+    <string name="asr_standard">Standard</string>
+    <string name="asr_hanafi">Hanafi</string>
+    <string name="asr_standard_desc">Standard (Shafi\'i, Maliki, Hanbali, Ja\'fari)</string>
+    <string name="asr_hanafi_desc">Hanafi (shadow twice the length)</string>
+    <string name="asr_locked">Standard · set by method</string>
+    <string name="row_high_lat">High-latitude rule</string>
+    <string name="hl_angle">Angle-based</string>
+    <string name="hl_middle">Middle of the night</string>
+    <string name="hl_seventh">One-seventh of the night</string>
+    <string name="row_show_asr_isha">Show Asr and Isha times</string>
+    <string name="show_asr_isha_sub">Off by default for Ja\'fari and Tehran</string>
+    <string name="row_adjustments">Manual adjustments</string>
+    <string name="adjustments_none">None</string>
+    <string name="adjustments_some">%1$d changed</string>
+    <string name="row_notifications">Notifications</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="row_time_format">Time format</string>
+    <string name="tf_system">System (%1$s)</string>
+    <string name="tf_12">12-hour</string>
+    <string name="tf_24">24-hour</string>
+    <string name="row_about">About Ufuq</string>
+
+    <!-- Methods -->
+    <string name="method_title">Calculation method</string>
+    <string name="method_jafari">Ja\'fari (Leva Institute, Qum)</string>
+    <string name="method_tehran">Tehran (Institute of Geophysics)</string>
+    <string name="method_mwl">Muslim World League</string>
+    <string name="method_isna">ISNA (North America)</string>
+    <string name="method_egypt">Egyptian General Authority</string>
+    <string name="method_makkah">Umm al-Qura (Makkah)</string>
+    <string name="method_karachi">Karachi</string>
+    <string name="method_kuwait">Kuwait</string>
+    <string name="method_qatar">Qatar</string>
+    <string name="method_muis">Singapore (MUIS)</string>
+    <string name="method_diyanet">Turkey (Diyanet)</string>
+    <string name="method_custom">Custom</string>
+    <string name="method_custom_desc">Starts as a copy of the current method</string>
+    <string name="short_jafari">Ja\'fari</string>
+    <string name="short_tehran">Tehran</string>
+    <string name="short_mwl">MWL</string>
+    <string name="short_isna">ISNA</string>
+    <string name="short_egypt">Egyptian</string>
+    <string name="short_makkah">Umm al-Qura</string>
+    <string name="short_karachi">Karachi</string>
+    <string name="short_kuwait">Kuwait</string>
+    <string name="short_qatar">Qatar</string>
+    <string name="short_muis">MUIS</string>
+    <string name="short_diyanet">Diyanet</string>
+    <string name="short_custom">Custom</string>
+    <string name="p_fajr">Fajr %1$s°</string>
+    <string name="p_maghrib">Maghrib %1$s°</string>
+    <string name="p_isha">Isha %1$s°</string>
+    <string name="p_isha_min">Isha %1$s min after Maghrib</string>
+    <string name="p_maghrib_min">Maghrib %1$s min after sunset</string>
+    <string name="p_sep">" · "</string>
+
+    <!-- City -->
+    <string name="city_title">Choose a city</string>
+    <string name="city_search">Search cities</string>
+    <string name="city_hint">English or Arabic, spelling doesn\'t need to be exact.</string>
+    <string name="use_my_location_auto">Use my location (Auto)</string>
+    <string name="currently">Currently %1$s</string>
+    <string name="results">RESULTS</string>
+    <string name="recent">RECENT</string>
+    <string name="no_results">No cities found</string>
+    <string name="loading_cities">Loading cities…</string>
+    <string name="location_denied">Location is off for Ufuq. Pick a city, or allow location in system settings.</string>
+    <string name="open_settings">Open settings</string>
+
+    <!-- Notifications -->
+    <string name="notif_title">Notifications</string>
+    <string name="notif_master">Prayer notifications</string>
+    <string name="notif_master_sub">Silent: no sound or vibration</string>
+    <string name="notify_me_for">NOTIFY ME FOR</string>
+    <string name="notif_hidden_note">Asr and Isha are hidden with this method. Turn on “Show Asr and Isha times” in Settings to add them.</string>
+    <string name="preview">PREVIEW</string>
+    <string name="preview_now">Ufuq · now</string>
+    <string name="notif_text">%1$s — %2$s</string>
+    <string name="battery_title">Notifications arriving late?</string>
+    <string name="battery_body">Some phones, like vivo and Xiaomi, pause apps to save battery. Allow Ufuq to run in the background so notifications arrive on time.</string>
+    <string name="battery_button">Open app settings</string>
+    <string name="got_it">Got it</string>
+    <string name="exact_off">Exact alarms are off, so notifications may arrive a few minutes late.</string>
+    <string name="allow_exact">Allow exact alarms</string>
+    <string name="notif_blocked">Notifications are blocked for Ufuq. Allow them in system settings.</string>
+    <string name="channel_name">Prayer times</string>
+    <string name="channel_desc">Quiet reminders at the prayer times you choose</string>
+
+    <!-- Adjustments -->
+    <string name="adj_title">Manual adjustments</string>
+    <string name="adj_angles">CUSTOM METHOD</string>
+    <string name="adj_angles_locked">To change angles, choose Custom under Calculation method.</string>
+    <string name="adj_fajr_angle">Fajr angle</string>
+    <string name="adj_maghrib">Maghrib</string>
+    <string name="adj_isha">Isha</string>
+    <string name="adj_use_angle">Angle</string>
+    <string name="adj_use_minutes">Minutes</string>
+    <string name="adj_offsets">MINUTE ADJUSTMENTS</string>
+    <string name="adj_offsets_note">Move any time earlier or later. Applies on top of the method.</string>
+    <string name="adj_reset">Reset all</string>
+    <string name="minus">Decrease</string>
+    <string name="plus">Increase</string>
+    <string name="value_min">%1$+d min</string>
+    <string name="value_deg">%1$s°</string>
+    <string name="value_after_sunset">%1$d min after sunset</string>
+    <string name="value_after_maghrib">%1$d min after Maghrib</string>
+
+    <!-- Month -->
+    <string name="month_title">Next 30 days</string>
+    <string name="col_date">Date</string>
+
+    <!-- Welcome -->
+    <string name="welcome_tagline">Qibla and prayer times. Free, no ads, offline.</string>
+    <string name="before_start">Before you start</string>
+    <string name="location_note">Ufuq uses your approximate location to find your city. It never leaves your phone.</string>
+    <string name="ok_use_location">OK, use my location</string>
+    <string name="choose_city_instead">Choose a city instead</string>
+    <string name="how_calculated">How should prayer times be calculated?</string>
+    <string name="how_calculated_sub">Pick the method your mosque or community follows. You can change it anytime in Settings.</string>
+    <string name="continue_">Continue</string>
+    <string name="step_of">Step %1$d of %2$d</string>
+
+    <!-- Disclaimer (full) -->
+    <string name="disclaimer_p1">Prayer times are calculated from your location and the selected method. They are estimates. Actual times can differ because of local horizon, weather, elevation, and differing scholarly opinions on how each time is defined.</string>
+    <string name="disclaimer_p2">If your local mosque or the scholar you follow publishes a timetable, follow that. You can adjust each time in Settings → Manual adjustments.</string>
+    <string name="disclaimer_p3">The Qibla direction is calculated from your location. Phone compasses can be thrown off by metal, magnets or phone cases, so calibrate by moving your phone in a figure-8 and double-check when possible.</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+    <string name="version">Version %1$s</string>
+    <string name="horizon_meaning">“Horizon”: every prayer time is defined by the sun against the horizon.</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="no_warranty">Provided as is, without warranty. Not a religious ruling.</string>
+    <string name="privacy">Privacy</string>
+    <string name="privacy_body">Ufuq collects nothing. Your location is used only on this phone to calculate times and the Qibla, and never leaves it. No internet access, no analytics, no ads, no accounts.</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="privacy_url">https://ahmali3.github.io/ufuq/privacy</string>
+    <string name="credits">Credits</string>
+    <string name="credits_body">City data © GeoNames, licensed under CC-BY 4.0.</string>
+    <string name="made_by">Made by Ahmed Ali</string>
+</resources>
