@@ -29,11 +29,29 @@ adb shell settings put global transition_animation_scale 0
 adb shell settings put global animator_duration_scale 0
 adb logcat -c || true
 
+# Emulators sometimes show "System UI / Launcher isn't responding" boxes that steal focus
+# from the app under test. Hide them and let the home screen settle first.
+calm_device() {
+  adb shell settings put global hide_error_dialogs 1 >/dev/null 2>&1 || true
+  adb shell input keyevent KEYCODE_WAKEUP >/dev/null 2>&1 || true
+  adb shell input keyevent KEYCODE_HOME >/dev/null 2>&1 || true
+  sleep 5
+  adb shell am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null 2>&1 || true
+}
+calm_device
+
 if ! adb install -r -t "$APP" >> "$STATUS" 2>&1; then echo "FAILED: install app" | tee -a "$STATUS"; exit 1; fi
 if ! adb install -r -t "$TEST" >> "$STATUS" 2>&1; then echo "FAILED: install tests" | tee -a "$STATUS"; exit 1; fi
 
 # Instrumented tests (keeps the app installed so screenshots can be pulled).
 adb shell am instrument -w -r "$PKG.test/androidx.test.runner.AndroidJUnitRunner" | tr -d '\r' | tee "$OUT/instrumentation.txt"
+# One retry, only when a system popup took focus away (not for real test failures).
+if ! grep -q "^OK (" "$OUT/instrumentation.txt" && grep -q "RootViewWithoutFocusException" "$OUT/instrumentation.txt"; then
+  echo "Retrying: a system dialog took focus" | tee -a "$STATUS"
+  mv "$OUT/instrumentation.txt" "$OUT/instrumentation-first-try.txt"
+  calm_device
+  adb shell am instrument -w -r "$PKG.test/androidx.test.runner.AndroidJUnitRunner" | tr -d '\r' | tee "$OUT/instrumentation.txt"
+fi
 adb pull "/sdcard/Android/data/$PKG/files/screenshots/." "$OUT/screenshots/" >/dev/null 2>&1 || true
 adb logcat -d -v brief AndroidRuntime:E ActivityManager:W "*:F" > "$OUT/logcat.txt" 2>/dev/null || true
 
