@@ -53,7 +53,8 @@ step "City database" python3 tools/build_cities.py
 step "Reference data" bash -c "cd tools/reference && npm install --no-audit --no-fund && npm run gen"
 step "Unit tests" gradle :app:testDebugUnitTest --stacktrace --console=plain
 collect
-step "Lint" gradle :app:lintDebug --console=plain
+LINT_TXT=app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt
+step "Lint" bash -c "gradle :app:lintDebug --console=plain; rc=\$?; cat $LINT_TXT 2>/dev/null; exit \$rc"
 step "Assemble" gradle :app:assembleDebug :app:assembleDebugAndroidTest :app:assembleRelease --console=plain
 collect
 

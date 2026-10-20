@@ -1,6 +1,7 @@
 package com.ahmali.ufuq.ui
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -59,6 +60,8 @@ class WelcomeActivity : BaseActivity() {
         }
     }
 
+    // Only reached on Android 12 and older; 13+ uses backToStep1 above.
+    @SuppressLint("GestureBackNavigation")
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (step == 2) {
