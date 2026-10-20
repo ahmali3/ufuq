@@ -1,0 +1,12 @@
+{
+  "name": "ufuq-reference",
+  "private": true,
+  "description": "Generates unit-test reference data (not shipped in the app).",
+  "scripts": {
+    "gen": "node gen.js > ../../app/src/test/java/com/ahmali/ufuq/core/ReferenceData.kt"
+  },
+  "dependencies": {
+    "adhan": "4.4.6",
+    "praytimes": "0.0.5"
+  }
+}
