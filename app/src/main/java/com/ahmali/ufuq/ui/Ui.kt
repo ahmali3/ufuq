@@ -231,7 +231,8 @@ abstract class BaseActivity : Activity() {
         if (Build.VERSION.SDK_INT >= 30) {
             w.navigationBarColor = Color.TRANSPARENT
             w.setDecorFitsSystemWindows(false)
-            w.insetsController?.setSystemBarsAppearance(
+            // Go through decorView: Window.insetsController crashes before the decor exists.
+            w.decorView.windowInsetsController?.setSystemBarsAppearance(
                 WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS or
                     WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
                 WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS or
