@@ -51,7 +51,7 @@ object AlarmScheduler {
      */
     fun blockedBySystem(ctx: Context): Boolean {
         val nm = ctx.getSystemService(NotificationManager::class.java) ?: return false
-        if (!nm.areNotificationsEnabled()) return true
+        if (Build.VERSION.SDK_INT >= 24 && !nm.areNotificationsEnabled()) return true
         if (Build.VERSION.SDK_INT >= 26) {
             val ch = nm.getNotificationChannel(CHANNEL_ID)
             if (ch != null && ch.importance == NotificationManager.IMPORTANCE_NONE) return true
