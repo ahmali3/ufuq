@@ -148,8 +148,15 @@
     <string name="preview_now">Ufuq · now</string>
     <string name="notif_text">%1$s — %2$s</string>
     <string name="battery_title">Notifications arriving late?</string>
-    <string name="battery_body">Some phones, like vivo and Xiaomi, pause apps to save battery. Allow Ufuq to run in the background so notifications arrive on time.</string>
-    <string name="battery_button">Open app settings</string>
+    <string name="battery_body">Some phones, like vivo and Xiaomi, stop apps in the background to save battery, and the notifications never arrive. In your phone\'s battery settings, set Ufuq to unrestricted or allowed in the background (vivo calls it “Background power consumption”), and turn on Auto-start if your phone has it.</string>
+    <string name="battery_button">Battery settings</string>
+    <string name="notif_blocked_system">Your phone is hiding Ufuq\'s notifications. Turn on notifications for Ufuq, and its “Prayer times” category, in system settings.</string>
+    <string name="next_notif">Next: %1$s at %2$s.</string>
+    <string name="next_notif_inexact">It may arrive a few minutes late until exact alarms are allowed.</string>
+    <string name="test_notif">Send a test notification</string>
+    <string name="test_notif_title">Ufuq notifications are working</string>
+    <string name="test_notif_body">Prayer notifications will look like this, without sound.</string>
+    <string name="test_notif_sent">Sent. Pull down your notification shade to check it’s there; it’s silent, so it won’t make a sound.</string>
     <string name="got_it">Got it</string>
     <string name="exact_off">Exact alarms are off, so notifications may arrive a few minutes late.</string>
     <string name="allow_exact">Allow exact alarms</string>
