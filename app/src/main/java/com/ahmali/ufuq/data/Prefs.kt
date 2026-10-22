@@ -214,6 +214,15 @@ class Prefs(context: Context) {
         get() = sp.getBoolean("nextAlarmExact", false)
         set(v) = sp.edit().putBoolean("nextAlarmExact", v).apply()
 
+    var nextAlarmPrayer: String?
+        get() = sp.getString("nextAlarmPrayer", null)
+        set(v) = sp.edit().putString("nextAlarmPrayer", v).apply()
+
+    /** The prayer time (epoch ms) of the last notification shown, so one is never shown twice. */
+    var lastPostedAt: Long
+        get() = sp.getLong("lastPosted", 0L)
+        set(v) = sp.edit().putLong("lastPosted", v).apply()
+
     // ---- Review prompt ----
 
     val firstOpenDay: Long

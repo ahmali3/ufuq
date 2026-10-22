@@ -56,6 +56,19 @@ class NotificationsActivity : BaseActivity() {
         })
         body.addView(master, matchWrap().apply { topMargin = dp(8) })
 
+        if (on) {
+            nextLine()?.let { line ->
+                body.addView(text(line, 13f, Palette.MUTED).lines(1.35f).apply {
+                    setPaddingRelative(dp(8), dp(8), dp(8), 0)
+                })
+            }
+        }
+
+        // The permission can be granted while the phone still hides the notifications.
+        if (on && AlarmScheduler.canPostNotifications(this) && AlarmScheduler.blockedBySystem(this)) {
+            body.addView(noteCard(getString(R.string.notif_blocked_system), getString(R.string.open_settings)) { openAppNotificationSettings() })
+        }
+
         if (Build.VERSION.SDK_INT >= 33 && !AlarmScheduler.canPostNotifications(this) &&
             shouldShowBlockedNote
         ) {
@@ -121,6 +134,19 @@ class NotificationsActivity : BaseActivity() {
         preview.addView(pt, weight1().apply { marginStart = dp(12) })
         body.addView(preview, matchWrap().apply { topMargin = dp(8); bottomMargin = dp(4) })
 
+        if (on) {
+            body.addView(outlineButton(getString(R.string.test_notif)) {
+                val shown = AlarmScheduler.postTest(this)
+                testResult = getString(if (shown) R.string.test_notif_sent else R.string.notif_blocked_system)
+                render()
+            }, wrapWrap().apply { topMargin = dp(16) })
+            testResult?.let {
+                body.addView(text(it, 13f, Palette.BODY).lines(1.4f).apply {
+                    setPaddingRelative(dp(8), dp(8), dp(8), 0)
+                })
+            }
+        }
+
         // One-time battery tip for phones that pause background apps.
         if (on && aggressiveOem() && !prefs.batteryTipDismissed) {
             val tip = vbox().apply {
@@ -130,7 +156,7 @@ class NotificationsActivity : BaseActivity() {
             tip.addView(text(getString(R.string.battery_title), 14f, Palette.INK, Fonts.bold))
             tip.addView(text(getString(R.string.battery_body), 13f, Palette.BODY).lines(1.4f).top(this, 6))
             val buttons = hbox()
-            buttons.addView(outlineButton(getString(R.string.battery_button)) { openAppSettings() })
+            buttons.addView(outlineButton(getString(R.string.battery_button)) { openBatterySettings() })
             buttons.addView(textButton(getString(R.string.got_it)) {
                 prefs.batteryTipDismissed = true
                 render()
@@ -141,6 +167,27 @@ class NotificationsActivity : BaseActivity() {
     }
 
     private var shouldShowBlockedNote = false
+    private var testResult: String? = null
+
+    /** "Next: Maghrib at 6:12 PM", noting when alarms may be a little late. */
+    private fun nextLine(): String? {
+        val at = prefs.nextAlarmAt
+        if (at <= System.currentTimeMillis()) return null
+        val prayer = Prayer.entries.firstOrNull { it.name == prefs.nextAlarmPrayer } ?: return null
+        val zone = prefs.currentPlace()?.zone ?: java.time.ZoneId.systemDefault()
+        val time = java.time.Instant.ofEpochMilli(at).atZone(zone)
+        val line = getString(R.string.next_notif, prayerName(prayer), TimeFmt(this, prefs).full(time))
+        return if (prefs.nextAlarmExact) line else line + " " + getString(R.string.next_notif_inexact)
+    }
+
+    /** Battery-optimisation list (no extra permission needed); falls back to app settings. */
+    private fun openBatterySettings() {
+        try {
+            startActivity(Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS))
+        } catch (e: Exception) {
+            openAppSettings()
+        }
+    }
 
     private fun previewText(): String {
         val place = prefs.currentPlace()
