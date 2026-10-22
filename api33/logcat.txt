@@ -1,0 +1,74 @@
+--------- beginning of system
+W/ActivityManager(  478): Slow operation: 53ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  478): Slow operation: 53ms so far, now at startProcess: building log message
+W/ActivityManager(  478): Slow operation: 53ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  478): Slow operation: 55ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  478): Slow operation: 364ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  478): Slow operation: 688ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  478): Slow operation: 688ms so far, now at startProcess: building log message
+W/ActivityManager(  478): Slow operation: 688ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  478): Slow operation: 688ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  478): Slow operation: 82ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  478): Slow operation: 82ms so far, now at startProcess: building log message
+W/ActivityManager(  478): Slow operation: 82ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  478): Slow operation: 82ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  478): Slow operation: 51ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  478): Slow operation: 51ms so far, now at startProcess: building log message
+W/ActivityManager(  478): Slow operation: 51ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  478): Slow operation: 51ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  478): Service lookup failed: association not allowed between packages com.google.android.as.oss and com.google.android.gms
+W/ActivityManager(  478): Receiver with filter android.content.IntentFilter@10d559 already registered for pid 1012, callerPackage is com.google.android.apps.nexuslauncher
+W/ActivityManager(  478): Foreground service started from background can not have location/camera/microphone access: service com.google.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.dataservice.superpacks.SuperpacksForegroundTaskService
+W/ActivityManager(  478): Slow operation: 55ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  478): Slow operation: 74ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  478): Slow operation: 74ms so far, now at startProcess: building log message
+W/ActivityManager(  478): Slow operation: 74ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  478): Slow operation: 74ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  478): Slow operation: 69ms so far, now at attachApplicationLocked: after sendPendingBroadcastsLocked
+W/ActivityManager(  478): Foreground service started from background can not have location/camera/microphone access: service com.google.android.apps.messaging/com.google.apps.tiktok.concurrent.InternalForegroundService
+W/ActivityManager(  478): Receiver with filter android.content.IntentFilter@1c1f624 already registered for pid 3172, callerPackage is com.google.android.ims
+W/ActivityManager(  478): Unable to start service Intent { act=com.google.android.gms.home.service.START pkg=com.google.android.gms } U=0: not found
+W/ActivityManager(  478): Unbind failed: could not find connection for android.os.BinderProxy@47c175a
+W/ActivityManager(  478): Receiver with filter android.content.IntentFilter@2ea2303 already registered for pid 1012, callerPackage is com.google.android.apps.nexuslauncher
+W/ActivityManager(  478): Slow operation: 76ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  478): Slow operation: 76ms so far, now at startProcess: building log message
+W/ActivityManager(  478): Slow operation: 76ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  478): Slow operation: 77ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  478): Slow operation: 70ms so far, now at attachApplicationLocked: after sendPendingBroadcastsLocked
+W/ActivityManager(  478): Slow operation: 76ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  478): Slow operation: 153ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  478): Slow operation: 153ms so far, now at startProcess: building log message
+W/ActivityManager(  478): Slow operation: 153ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  478): Slow operation: 153ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  478): UserLifecycleEvent 6 received without an active userJourneySession.
+W/ActivityManager(  478): Slow operation: 68ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  478): Slow operation: 69ms so far, now at startProcess: building log message
+W/ActivityManager(  478): Slow operation: 70ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  478): Slow operation: 70ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  478): Slow operation: 54ms so far, now at attachApplicationLocked: after sendPendingBroadcastsLocked
+W/ActivityManager(  478): Unable to start service Intent { cmp=com.google.android.projection.gearhead/com.google.android.apps.auto.carservice.service.impl.GearheadCarStartupService } U=0: not found
+W/ActivityManager(  478): Unbind failed: could not find connection for android.os.BinderProxy@f7ea14f
+W/ActivityManager(  478): Scheduling restart of crashed service com.google.android.gm/com.android.email.job.UpgradeJob$UpgradeJobService in 10000ms for connection
+W/ActivityManager(  478): ProcessRecord{b4ed1fe 0:com.google.android.gm/u0a144} is attached to a previous process 2580
+W/ActivityManager(  478): ProcessRecord{b4ed1fe 0:com.google.android.gm/u0a144} is attached to a previous process 2580
+W/ActivityManager(  478): Scheduling restart of crashed service com.google.android.permissioncontroller/com.android.permissioncontroller.role.service.RoleControllerServiceImpl in 10000ms for connection
+W/ActivityManager(  478): Scheduling restart of crashed service com.google.android.permissioncontroller/com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl in 30000ms for connection
+W/ActivityManager(  478): ProcessRecord{d80709 0:com.google.android.permissioncontroller/u0a171} is attached to a previous process 756
+W/ActivityManager(  478): Slow operation: 406ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  478): Slow operation: 423ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  478): Slow operation: 588ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  478): Slow operation: 590ms so far, now at startProcess: building log message
+W/ActivityManager(  478): Slow operation: 590ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  478): Slow operation: 617ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  478): ProcessRecord{19fd2f 0:com.google.android.settings.intelligence/u0a107} is attached to a previous process 3714
+W/ActivityManager(  478): ProcessRecord{24b3590 0:com.google.android.settings.intelligence/u0a107} start not valid, killing pid=4953, killedByAm=true;No entry in mProcessNames;pendingStart=false;
+W/ActivityManager(  478): Slow operation: 107ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  478): Slow operation: 107ms so far, now at startProcess: building log message
+W/ActivityManager(  478): Slow operation: 107ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  478): Slow operation: 116ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  478): Unable to start service Intent { act=com.google.android.play.core.splitinstall.BIND_SPLIT_INSTALL_SERVICE pkg=com.android.vending } U=0: not found
+W/ActivityManager(  478): Slow operation: 85ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  478): Slow operation: 86ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  478): Slow operation: 91ms so far, now at attachApplicationLocked: after mServices.attachApplicationLocked
+W/ActivityManager(  478): Slow operation: 102ms so far, now at attachApplicationLocked: after sendPendingBroadcastsLocked
+W/ActivityManager(  478): Foreground service started from background can not have location/camera/microphone access: service com.google.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.dataservice.superpacks.SuperpacksForegroundTaskService

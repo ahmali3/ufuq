@@ -1,0 +1,53 @@
+--------- beginning of main
+--------- beginning of system
+W/ActivityManager(  511): Slow operation: 127ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  511): Slow operation: 127ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  511): Slow operation: 127ms so far, now at startProcess: building log message
+W/ActivityManager(  511): Slow operation: 127ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  511): Slow operation: 297ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  511): Slow operation: 256ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  511): Slow operation: 307ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  511): Slow operation: 307ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  511): Slow operation: 307ms so far, now at startProcess: building log message
+W/ActivityManager(  511): Slow operation: 307ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  511): Slow operation: 307ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  511): Slow operation: 301ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  511): Slow operation: 358ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  511): Slow operation: 365ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  511): Slow operation: 365ms so far, now at startProcess: building log message
+W/ActivityManager(  511): Slow operation: 365ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  511): Slow operation: 365ms so far, now at startProcess: done updating pids map
+E/ActivityManager(  511): Sending non-protected broadcast com.android.systemui.demo from system 727:com.android.systemui/u0a121 pkg com.android.systemui
+E/ActivityManager(  511): java.lang.Throwable
+E/ActivityManager(  511): 	at com.android.server.am.ActivityManagerService.checkBroadcastFromSystem(ActivityManagerService.java:15912)
+E/ActivityManager(  511): 	at com.android.server.am.ActivityManagerService.broadcastIntentLocked(ActivityManagerService.java:16493)
+E/ActivityManager(  511): 	at com.android.server.am.ActivityManagerService.broadcastIntentLocked(ActivityManagerService.java:15929)
+E/ActivityManager(  511): 	at com.android.server.am.ActivityManagerService.broadcastIntentWithFeature(ActivityManagerService.java:16743)
+E/ActivityManager(  511): 	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:2267)
+E/ActivityManager(  511): 	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2883)
+E/ActivityManager(  511): 	at android.os.Binder.execTransactInternal(Binder.java:1154)
+E/ActivityManager(  511): 	at android.os.Binder.execTransact(Binder.java:1123)
+E/ActivityManager(  511): Sending non-protected broadcast com.android.systemui.demo from system 727:com.android.systemui/u0a121 pkg com.android.systemui
+E/ActivityManager(  511): java.lang.Throwable
+E/ActivityManager(  511): 	at com.android.server.am.ActivityManagerService.checkBroadcastFromSystem(ActivityManagerService.java:15912)
+E/ActivityManager(  511): 	at com.android.server.am.ActivityManagerService.broadcastIntentLocked(ActivityManagerService.java:16587)
+E/ActivityManager(  511): 	at com.android.server.am.ActivityManagerService.broadcastIntentLocked(ActivityManagerService.java:15929)
+E/ActivityManager(  511): 	at com.android.server.am.ActivityManagerService.broadcastIntentWithFeature(ActivityManagerService.java:16743)
+E/ActivityManager(  511): 	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:2267)
+E/ActivityManager(  511): 	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2883)
+E/ActivityManager(  511): 	at android.os.Binder.execTransactInternal(Binder.java:1154)
+E/ActivityManager(  511): 	at android.os.Binder.execTransact(Binder.java:1123)
+--------- beginning of kernel
+W/ActivityManager(  511): Slow operation: 51ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  511): Slow operation: 51ms so far, now at startProcess: building log message
+W/ActivityManager(  511): Slow operation: 51ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  511): Slow operation: 51ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  511): Slow operation: 73ms so far, now at getContentProviderImpl: after updateLruProcess
+W/ActivityManager(  511): Slow operation: 73ms so far, now at getContentProviderImpl: before updateOomAdj
+W/ActivityManager(  511): Slow operation: 73ms so far, now at getContentProviderImpl: after updateOomAdj
+W/ActivityManager(  511): Slow operation: 73ms so far, now at getContentProviderImpl: done!
+W/ActivityManager(  511): UserLifecycleEvent 6 received without an active userJourneySession.
+E/ActivityManager(  511): ProcessRecord{c96fe68 1836:com.android.managedprovisioning/u0a74} is attached to a previous process
+E/ActivityManager(  511): Already have existing proc ProcessRecord{c96fe68 1836:com.android.managedprovisioning/u0a74} when adding ProcessRecord{1415741 0:com.android.managedprovisioning/u0a74}
+E/ActivityManager(  511): ProcessRecord{c96fe68 1836:com.android.managedprovisioning/u0a74} refused to die, but we need to launch ProcessRecord{1415741 0:com.android.managedprovisioning/u0a74}
+W/ActivityManager(  511): setHasOverlayUi called on unknown pid: 2477

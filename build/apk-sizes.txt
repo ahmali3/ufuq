@@ -1,0 +1,3 @@
+-rw-r--r-- 1 runner runner 1174354 Oct 22 20:19 apks/androidTest/debug/app-debug-androidTest.apk
+-rw-r--r-- 1 runner runner 3997278 Oct 22 20:19 apks/debug/app-debug.apk
+-rw-r--r-- 1 runner runner 1936559 Oct 22 20:19 apks/release/app-release.apk

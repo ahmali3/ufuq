@@ -1,0 +1,13 @@
+app=apks/debug/app-debug.apk test=apks/androidTest/debug/app-debug-androidTest.apk release=apks/release/app-release.apk
+Android 15 (API 35)
+Device: sdk_gphone64_x86_64
+Physical size: 2560x1600
+Physical density: 320
+Font scale: 1.0
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+OK (7 tests)
+Release cold start: 2232 2545 2691 ms
+DEVICE OK

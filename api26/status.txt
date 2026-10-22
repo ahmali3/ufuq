@@ -1,0 +1,13 @@
+app=apks/debug/app-debug.apk test=apks/androidTest/debug/app-debug-androidTest.apk release=apks/release/app-release.apk
+Android 8.0.0 (API 26)
+Device: Android SDK built for x86_64
+Physical size: 1080x1920
+Physical density: 420
+Font scale: 1.0
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+OK (7 tests)
+Release cold start: 600 585 588 ms
+DEVICE OK

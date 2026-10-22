@@ -1,0 +1,13 @@
+app=apks/debug/app-debug.apk test=apks/androidTest/debug/app-debug-androidTest.apk release=apks/release/app-release.apk
+Android 16 (API 36)
+Device: sdk_gphone64_x86_64
+Physical size: 1080x2400
+Physical density: 420
+Font scale: 1.0
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+OK (7 tests)
+Release cold start: 1747 1595 1356 ms
+DEVICE OK
