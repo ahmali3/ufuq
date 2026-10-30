@@ -157,6 +157,12 @@
     <string name="test_notif_title">Ufuq notifications are working</string>
     <string name="test_notif_body">Prayer notifications will look like this, without sound.</string>
     <string name="test_notif_sent">Sent. Pull down your notification shade to check it’s there; it’s silent, so it won’t make a sound.</string>
+    <string name="missed_body">Your phone didn’t let the %1$s reminder at %2$s go off. Phones like vivo stop apps in the background to save battery. Allow Ufuq to run in the background in battery settings, and turn on Auto-start for it in app settings.</string>
+    <string name="missed_reminder">last</string>
+    <string name="missed_app_settings">App settings</string>
+    <string name="log_show">Show notification log</string>
+    <string name="log_hide">Hide notification log</string>
+    <string name="log_empty">Nothing yet.</string>
     <string name="got_it">Got it</string>
     <string name="exact_off">Exact alarms are off, so notifications may arrive a few minutes late.</string>
     <string name="allow_exact">Allow exact alarms</string>

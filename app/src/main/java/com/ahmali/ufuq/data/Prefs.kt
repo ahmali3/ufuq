@@ -223,6 +223,25 @@ class Prefs(context: Context) {
         get() = sp.getLong("lastPosted", 0L)
         set(v) = sp.edit().putLong("lastPosted", v).apply()
 
+    /** Prayer time (epoch ms) of the most recent alarm that actually fired. */
+    var lastFiredAt: Long
+        get() = sp.getLong("lastFired", 0L)
+        set(v) = sp.edit().putLong("lastFired", v).apply()
+
+    /** Prayer time (epoch ms) and name of the latest reminder the phone never delivered. */
+    var missedAt: Long
+        get() = sp.getLong("missedAt", 0L)
+        set(v) = sp.edit().putLong("missedAt", v).apply()
+
+    var missedPrayer: String?
+        get() = sp.getString("missedPrayer", null)
+        set(v) = sp.edit().putString("missedPrayer", v).apply()
+
+    /** Recent notification events, newest first, one per line. Shown in the Notifications screen. */
+    var notifLog: String
+        get() = sp.getString("notifLog", "") ?: ""
+        set(v) = sp.edit().putString("notifLog", v).apply()
+
     // ---- Review prompt ----
 
     val firstOpenDay: Long
