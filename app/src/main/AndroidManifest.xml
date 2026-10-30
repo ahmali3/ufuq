@@ -57,6 +57,11 @@
             android:name=".notify.PrayerAlarmReceiver"
             android:exported="false" />
 
+        <service
+            android:name=".notify.WatchdogJob"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
         <receiver
             android:name=".notify.RescheduleReceiver"
             android:exported="true">

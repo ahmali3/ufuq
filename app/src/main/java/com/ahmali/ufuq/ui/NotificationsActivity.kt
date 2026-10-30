@@ -64,6 +64,17 @@ class NotificationsActivity : BaseActivity() {
             }
         }
 
+        // The phone held back or cleared a reminder: say which one and how to stop it.
+        if (on && AlarmScheduler.recentlyMissed(prefs)) {
+            val missed = Prayer.entries.firstOrNull { it.name == prefs.missedPrayer }
+            val zone = prefs.currentPlace()?.zone ?: java.time.ZoneId.systemDefault()
+            val time = TimeFmt(this, prefs).full(java.time.Instant.ofEpochMilli(prefs.missedAt).atZone(zone))
+            val msg = getString(R.string.missed_body, missed?.let { prayerName(it) } ?: getString(R.string.missed_reminder), time)
+            val card = noteCard(msg, getString(R.string.battery_button)) { openBatterySettings() }
+            card.addView(textButton(getString(R.string.missed_app_settings)) { openAppSettings() }, wrapWrap())
+            body.addView(card)
+        }
+
         // The permission can be granted while the phone still hides the notifications.
         if (on && AlarmScheduler.canPostNotifications(this) && AlarmScheduler.blockedBySystem(this)) {
             body.addView(noteCard(getString(R.string.notif_blocked_system), getString(R.string.open_settings)) { openAppNotificationSettings() })
@@ -147,8 +158,8 @@ class NotificationsActivity : BaseActivity() {
             }
         }
 
-        // One-time battery tip for phones that pause background apps.
-        if (on && aggressiveOem() && !prefs.batteryTipDismissed) {
+        // Battery tip for phones that stop background apps (always shown after a missed reminder).
+        if (on && aggressiveOem() && (!prefs.batteryTipDismissed || AlarmScheduler.recentlyMissed(prefs))) {
             val tip = vbox().apply {
                 background = rounded(Palette.NAV_BG, dpf(16))
                 setPadding(dp(16), dp(14), dp(16), dp(10))
@@ -164,10 +175,29 @@ class NotificationsActivity : BaseActivity() {
             tip.addView(buttons, matchWrap().apply { topMargin = dp(10) })
             body.addView(tip, matchWrap().apply { topMargin = dp(20) })
         }
+
+        addLog()
     }
 
     private var shouldShowBlockedNote = false
     private var testResult: String? = null
+    private var showLog = false
+
+    /** What happened to recent reminders on this phone, newest first. */
+    private fun addLog() {
+        body.addView(textButton(getString(if (showLog) R.string.log_hide else R.string.log_show)) {
+            showLog = !showLog
+            render()
+        }.apply { gravity = Gravity.CENTER_VERTICAL or Gravity.START; setPadding(0, 0, 0, 0) }, wrapWrap().apply { topMargin = dp(16) })
+        if (!showLog) return
+        val lines = prefs.notifLog.ifBlank { getString(R.string.log_empty) }
+        body.addView(text(lines, 12f, Palette.BODY).lines(1.4f).apply {
+            typeface = android.graphics.Typeface.MONOSPACE
+            setTextIsSelectable(true)
+            background = rounded(Palette.CARD, dpf(12))
+            setPadding(dp(12), dp(10), dp(12), dp(10))
+        }, matchWrap().apply { topMargin = dp(4) })
+    }
 
     /** "Next: Maghrib at 6:12 PM", noting when alarms may be a little late. */
     private fun nextLine(): String? {
