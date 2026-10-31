@@ -1,0 +1,2 @@
+package: name='com.ahmali.ufuq' versionCode='30' versionName='1.0.30' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+targetSdkVersion:'36'

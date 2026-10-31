@@ -1,0 +1,154 @@
+--------- beginning of system
+W/ActivityManager(  560): Slow operation: 68ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 69ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 69ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 69ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 69ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 56ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 58ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 58ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 58ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 102ms so far, now at attachApplicationLocked: before bindApplication
+W/ActivityManager(  560): Slow operation: 106ms so far, now at attachApplicationLocked: immediately before bindApplication
+W/ActivityManager(  560): Slow operation: 112ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  560): Slow operation: 116ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  560): Slow operation: 123ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  560): Slow operation: 57ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  560): pid 560 system sent binder code 1 with flags 1 to frozen apps and got error -32
+W/ActivityManager(  560): Slow operation: 54ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 61ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 61ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 61ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 61ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 51ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  560): Slow operation: 61ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  560): Slow operation: 209ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 295ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 301ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 301ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 301ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Foreground service started from background can not have location/camera/microphone access: service com.google.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.dataservice.superpacks.SuperpacksForegroundTaskService
+W/ActivityManager(  560): Slow operation: 194ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 194ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 182ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  560): Slow operation: 204ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 56ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  560): Slow operation: 274ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 274ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 274ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 274ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 71ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 71ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 71ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 72ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 70ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  560): Slow operation: 105ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  560): Slow operation: 161ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 162ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 55ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 64ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 64ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 64ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 158ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  560): Slow operation: 168ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+E/ActivityManager(  560): Unable to freeze binder for 2590: -11
+W/ActivityManager(  560): Scheduling restart of crashed service com.google.android.devicelockcontroller/androidx.work.impl.background.systemjob.SystemJobService in 1000ms for connection
+W/ActivityManager(  560): Slow operation: 68ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  560): finishReceiver: no app for android.os.BinderProxy@bc86707
+W/ActivityManager(  560): finishReceiver: no app for android.os.BinderProxy@6f731c5
+W/ActivityManager(  560): Slow operation: 51ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  560): Slow operation: 120ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  560): Slow operation: 270ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 270ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 271ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 271ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 271ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 69ms so far, now at attachApplicationLocked: before bindApplication
+W/ActivityManager(  560): Slow operation: 77ms so far, now at attachApplicationLocked: immediately before bindApplication
+W/ActivityManager(  560): Slow operation: 98ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  560): Slow operation: 98ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  560): Slow operation: 142ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+E/ActivityManager(  560): Unable to freeze binder for 2808: -11
+W/ActivityManager(  560): Slow operation: 99ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  560): Slow operation: 101ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  560): finishReceiver: no app for android.os.BinderProxy@4d2a987
+W/ActivityManager(  560): Slow operation: 71ms so far, now at startProcess: done creating new process record
+W/ActivityManager(  560): Slow operation: 71ms so far, now at startProcess: stepping in to startProcess
+W/ActivityManager(  560): Slow operation: 93ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  560): Slow operation: 57ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 58ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 59ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 61ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 65ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 75ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  560): Slow operation: 59ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 69ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 69ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 69ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 73ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 55ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 55ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 55ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 55ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 55ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 232ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  560): Slow operation: 232ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  560): Slow operation: 54ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 54ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 54ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 54ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 52ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 52ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 55ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 178ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 178ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 178ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 180ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 56ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  560): Slow operation: 65ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 106ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 110ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 110ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 110ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 99ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  560): Slow operation: 116ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 56ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  560): Slow operation: 56ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  560): Slow operation: 74ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  560): Slow operation: 211ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 211ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 211ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 211ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Foreground service started from background can not have location/camera/microphone access: service com.google.android.apps.messaging/com.google.apps.tiktok.concurrent.InternalForegroundService
+W/ActivityManager(  560): Foreground service started from background can not have location/camera/microphone access: service com.google.android.apps.messaging/com.google.apps.tiktok.concurrent.InternalForegroundService
+W/ActivityManager(  560): Slow operation: 60ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 60ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 60ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 60ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 60ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 55ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  560): Slow operation: 68ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  560): Slow operation: 68ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  560): pid 1552 com.google.android.gms sent binder code 1 with flags 2 to frozen apps and got error -2147483646
+W/ActivityManager(  560): Unable to start service Intent { act=android.settings.hats.START_SERVICE pkg=com.google.android.settings.intelligence (has extras) } U=0: not found
+E/ActivityManager(  560): Unable to freeze binder for 3364: -11
+W/ActivityManager(  560): Scheduling restart of crashed service com.google.android.settings.intelligence/.modules.routines.impl.RoutinesJobIntentService in 1000ms for connection
+W/ActivityManager(  560): Rescheduling restart of crashed service com.google.android.settings.intelligence/.modules.routines.impl.RoutinesJobIntentService in 9981ms for mem-pressure-event
+W/ActivityManager(  560): Slow operation: 57ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  560): Slow operation: 96ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  560): Slow operation: 96ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 96ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 96ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 98ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): Slow operation: 53ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  560): Slow operation: 53ms so far, now at startProcess: building log message
+W/ActivityManager(  560): Slow operation: 65ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  560): Slow operation: 70ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  560): pid 560 system sent binder code 2 with flags 1 to frozen apps and got error -32
+W/ActivityManager(  560): pid 560 system sent binder code 2 with flags 1 to frozen apps and got error -32
+W/ActivityManager(  560): pid 560 system sent binder code 2 with flags 1 to frozen apps and got error -32
+W/ActivityManager(  560): pid 560 system sent binder code 2 with flags 1 to frozen apps and got error -32
+W/ActivityManager(  560): Foreground service started from background can not have location/camera/microphone access: service com.google.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.dataservice.superpacks.SuperpacksForegroundTaskService
+W/ActivityManager(  560): Foreground service started from background can not have location/camera/microphone access: service com.google.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.dataservice.superpacks.SuperpacksForegroundTaskService
+E/ActivityManager(  560): Unable to freeze binder for 2957: -11
+W/ActivityManager(  560): setHasOverlayUi called on unknown pid: 2957

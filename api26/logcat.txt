@@ -1,0 +1,7 @@
+--------- beginning of main
+--------- beginning of system
+W/ActivityManager( 1651): Duplicate finish request for ActivityRecord{cd7693e u0 com.ahmali.ufuq/.ui.WelcomeActivity t5 f}
+W/ActivityManager( 1651): Finishing task with all activities already finished
+W/ActivityManager( 1651): Duplicate finish request for ActivityRecord{83448ee u0 com.ahmali.ufuq.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity t7 f}
+W/ActivityManager( 1651): setHasOverlayUi called on unknown pid: 2002
+W/ActivityManager( 1651): setHasOverlayUi called on unknown pid: 2960

@@ -1,0 +1,17 @@
+app=apks/debug/app-debug.apk test=apks/androidTest/debug/app-debug-androidTest.apk release=apks/release/app-release.apk
+Android 6.0 (API 23)
+Device: Android SDK built for x86_64
+Physical size: 768x1280
+Physical density: 320
+Font scale: 1.0
+apks/debug/app-debug.apk: 1 file pushed, 0 skipped. 301.7 MB/s (4007922 bytes in 0.013s)
+Performing Push Install
+	pkg: /data/local/tmp/app-debug.apk
+Success
+apks/androidTest/debug/app-debug-androidTest.apk: 1 file pushed, 0 skipped. 1863.5 MB/s (1175853 bytes in 0.001s)
+Performing Push Install
+	pkg: /data/local/tmp/app-debug-androidTest.apk
+Success
+OK (7 tests)
+Release cold start: 832 752 711 ms
+DEVICE OK

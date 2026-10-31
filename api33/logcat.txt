@@ -1,0 +1,159 @@
+--------- beginning of system
+W/ActivityManager(  485): Unable to start service Intent { cmp=com.google.android.as/acl } U=0: not found
+W/ActivityManager(  485): Slow operation: 60ms so far, now at attachApplicationLocked: after mServices.attachApplicationLocked
+W/ActivityManager(  485): Slow operation: 168ms so far, now at startProcess: done creating new process record
+W/ActivityManager(  485): Slow operation: 168ms so far, now at startProcess: stepping in to startProcess
+W/ActivityManager(  485): Slow operation: 179ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  485): Slow operation: 72ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Slow operation: 111ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  485): Slow operation: 118ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  485): Slow operation: 133ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  485): Slow operation: 172ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 172ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 172ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 173ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Service lookup failed: association not allowed between packages com.google.android.as.oss and com.google.android.gms
+W/ActivityManager(  485): Slow operation: 81ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  485): Slow operation: 97ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  485): Slow operation: 114ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  485): Slow operation: 110ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 112ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 112ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 112ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Receiver with filter android.content.IntentFilter@686f60 already registered for pid 1014, callerPackage is com.google.android.apps.nexuslauncher
+W/ActivityManager(  485): Slow operation: 120ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  485): Slow operation: 120ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  485): Slow operation: 146ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  485): Slow operation: 174ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 174ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 174ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 174ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Foreground service started from background can not have location/camera/microphone access: service com.google.android.apps.messaging/com.google.apps.tiktok.concurrent.InternalForegroundService
+W/ActivityManager(  485): Receiver with filter android.content.IntentFilter@debd427 already registered for pid 2086, callerPackage is com.google.android.ims
+W/ActivityManager(  485): Slow operation: 189ms so far, now at attachApplicationLocked: immediately before bindApplication
+W/ActivityManager(  485): Slow operation: 194ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  485): Slow operation: 194ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  485): Slow operation: 195ms so far, now at attachApplicationLocked: after mServices.attachApplicationLocked
+W/ActivityManager(  485): Slow operation: 198ms so far, now at attachApplicationLocked: after sendPendingBroadcastsLocked
+W/ActivityManager(  485): Unable to start service Intent { act=com.google.android.gms.home.service.START pkg=com.google.android.gms } U=0: not found
+W/ActivityManager(  485): Unbind failed: could not find connection for android.os.BinderProxy@20fcc23
+W/ActivityManager(  485): Receiver with filter android.content.IntentFilter@fc639f7 already registered for pid 1014, callerPackage is com.google.android.apps.nexuslauncher
+W/ActivityManager(  485): Slow operation: 89ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  485): Slow operation: 105ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 106ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 116ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 119ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): UserLifecycleEvent 6 received without an active userJourneySession.
+W/ActivityManager(  485): Slow operation: 71ms so far, now at attachApplicationLocked: after sendPendingBroadcastsLocked
+W/ActivityManager(  485): Slow operation: 57ms so far, now at attachApplicationLocked: after sendPendingBroadcastsLocked
+W/ActivityManager(  485): Unable to start service Intent { cmp=com.google.android.projection.gearhead/com.google.android.apps.auto.carservice.service.impl.GearheadCarStartupService } U=0: not found
+W/ActivityManager(  485): Unbind failed: could not find connection for android.os.BinderProxy@f0eaf06
+W/ActivityManager(  485): ProcessRecord{2603c50 0:com.google.android.gm/u0a144} is attached to a previous process 2586
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.permissioncontroller/com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl in 10000ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.permissioncontroller/com.android.permissioncontroller.role.service.RoleControllerServiceImpl in 29998ms for connection
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.permissioncontroller/com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl in 19927ms for mem-pressure-event
+W/ActivityManager(  485): Slow operation: 54ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 54ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 54ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 54ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Slow operation: 52ms so far, now at attachApplicationLocked: after sendPendingBroadcastsLocked
+W/ActivityManager(  485): ProcessRecord{6f81ac4 0:com.google.android.settings.intelligence/u0a107} is attached to a previous process 3862
+W/ActivityManager(  485): Slow operation: 55ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  485): Slow operation: 61ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  485): Slow operation: 61ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 61ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 61ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 61ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): No pending application record for pid 4971 (IApplicationThread android.app.IApplicationThread$Stub$Proxy@bfc6056); dropping process
+W/ActivityManager(  485): Receiver with filter android.content.IntentFilter@b744fc7 already registered for pid 5079, callerPackage is com.google.android.googlequicksearchbox
+W/ActivityManager(  485): Slow operation: 70ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  485): Unable to start service Intent { act=com.google.android.play.core.splitinstall.BIND_SPLIT_INSTALL_SERVICE pkg=com.android.vending } U=0: not found
+W/ActivityManager(  485): Foreground service started from background can not have location/camera/microphone access: service com.google.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.dataservice.superpacks.SuperpacksForegroundTaskService
+W/ActivityManager(  485): Unable to start service Intent { act=com.google.android.gms.drive.ApiService.RESET_AFTER_BOOT flg=0x4 cmp=com.google.android.gms/.drive.api.ApiService (has extras) } U=0: not found
+W/ActivityManager(  485): Slow operation: 53ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  485): Slow operation: 140ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  485): Slow operation: 141ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 198ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 202ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 202ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Slow operation: 168ms so far, now at attachApplicationLocked: after mServices.attachApplicationLocked
+W/ActivityManager(  485): Slow operation: 169ms so far, now at attachApplicationLocked: after sendPendingBroadcastsLocked
+W/ActivityManager(  485): Slow operation: 51ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 52ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 52ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 52ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Slow operation: 54ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 54ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 54ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Slow operation: 57ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  485): Slow operation: 57ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 58ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 58ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 58ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Slow operation: 57ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Slow operation: 169ms so far, now at attachApplicationLocked: immediately before bindApplication
+W/ActivityManager(  485): Slow operation: 171ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  485): Slow operation: 171ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  485): Slow operation: 171ms so far, now at attachApplicationLocked: after mServices.attachApplicationLocked
+W/ActivityManager(  485): Slow operation: 173ms so far, now at attachApplicationLocked: after sendPendingBroadcastsLocked
+W/ActivityManager(  485): Slow operation: 60ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  485): Slow operation: 61ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 61ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 61ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 61ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.settings.intelligence/.modules.routines.impl.PruneDatabaseJobService in 1000ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.settings.intelligence/.modules.routines.impl.ComputeNewInferencesJobService in 10999ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.settings.intelligence/.modules.routines.impl.RoutinesJobIntentService in 20999ms for connection
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.settings.intelligence/.modules.routines.impl.PruneDatabaseJobService in 9921ms for mem-pressure-event
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.settings.intelligence/.modules.routines.impl.ComputeNewInferencesJobService in 29921ms for mem-pressure-event
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.settings.intelligence/.modules.routines.impl.RoutinesJobIntentService in 49921ms for mem-pressure-event
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.settings.intelligence/.modules.routines.impl.ComputeNewInferencesJobService in 527ms for mem-pressure-event
+W/ActivityManager(  485): stopServiceToken startId 271 is last, but have 1 remaining args
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.wallet.service.PaymentService in 10000ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.chimera.GmsIntentOperationService in 29999ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.icing.service.IndexService in 49989ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.chimera.container.ExternalFileApkService in 69989ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.chimera.GmsBoundBrokerService in 89989ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.chimera.GmsApiService in 109988ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService in 129925ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.gcm.GcmService in 149925ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.common.stats.GmsCoreStatsService in 169925ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.geotimezone.GeoTimeZoneService in 189925ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.chimera.PersistentBoundBrokerService in 209925ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService in 229925ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.chimera.PersistentApiService in 249925ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/com.google.android.location.internal.server.HardwareArProviderService in 269925ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.nearby.messages.service.NearbyMessagesService in 289925ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.nearby.sharing.ReceiveSurfaceService in 309924ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.location.geocode.GeocodeService in 329924ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.chimera.PersistentDirectBootAwareApiService in 349924ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/com.google.android.location.network.NetworkLocationService in 369924ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.location.persistent.LocationPersistentService in 389924ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.deviceconnection.service.DeviceConnectionWatcherService in 409924ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.gcm.nts.SchedulerService in 429924ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/com.google.android.location.reporting.service.ReportingAndroidService in 449923ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.nearby.exposurenotification.service.ExposureMatchingService in 469923ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/com.google.android.location.fused.FusedLocationService in 489923ms for connection
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.presencemanager.service.PresenceManagerPresenceReportService in 509923ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.nearby.exposurenotification.service.ExposureNotificationInternalService in 529923ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/com.google.android.contextmanager.service.ContextManagerService in 549923ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.thunderbird.EmergencyPersistentService in 569923ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.fido.fido2.pollux.CableAuthenticatorService in 589923ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.clearcut.debug.ClearcutDebugDumpService in 609923ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.auth.setup.devicesignals.LockScreenService in 629923ms for start-requested
+W/ActivityManager(  485): Scheduling restart of crashed service com.google.android.gms/.chimera.PersistentIntentOperationService in 649921ms for start-requested
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.gms/.wallet.service.PaymentService in 9870ms for other
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.gms/.chimera.GmsIntentOperationService in 29870ms for other
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.gms/.icing.service.IndexService in 49870ms for other
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.gms/.chimera.container.ExternalFileApkService in 69870ms for other
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.gms/.chimera.GmsBoundBrokerService in 89870ms for other
+W/ActivityManager(  485): Rescheduling restart of crashed service com.google.android.gms/.chimera.GmsApiService in 109870ms for other
+W/ActivityManager(  485): Unable to start service Intent { act=com.google.android.gms.home.service.START pkg=com.google.android.gms } U=0: not found
+W/ActivityManager(  485): Unbind failed: could not find connection for android.os.BinderProxy@1728fb3
+W/ActivityManager(  485): Slow operation: 52ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  485): Slow operation: 62ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  485): Slow operation: 62ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  485): Slow operation: 63ms so far, now at startProcess: building log message
+W/ActivityManager(  485): Slow operation: 63ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  485): Slow operation: 63ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  485): setHasOverlayUi called on unknown pid: 3838

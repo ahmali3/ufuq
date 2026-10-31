@@ -1,0 +1,6 @@
+TotalTime: 1916
+WaitTime: 1933
+TotalTime: 1591
+WaitTime: 1593
+TotalTime: 1888
+WaitTime: 1902

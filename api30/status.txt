@@ -1,0 +1,13 @@
+app=apks/debug/app-debug.apk test=apks/androidTest/debug/app-debug-androidTest.apk release=apks/release/app-release.apk
+Android 11 (API 30)
+Device: Android SDK built for x86_64
+Physical size: 1080x2280
+Physical density: 440
+Font scale: 1.3
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+OK (7 tests)
+Release cold start: 698 601 662 ms
+DEVICE OK

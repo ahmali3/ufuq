@@ -1,0 +1,260 @@
+--------- beginning of system
+W/ActivityManager(  623): Slow operation: 61ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 61ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 61ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 373ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 59ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 56ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  623): Slow operation: 52ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  623): Slow operation: 52ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  623): Slow operation: 245ms so far, now at startProcess: done creating new process record
+W/ActivityManager(  623): Slow operation: 245ms so far, now at startProcess: stepping in to startProcess
+W/ActivityManager(  623): Slow operation: 247ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  623): Slow operation: 57ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 57ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 57ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 63ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 170ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  623): Slow operation: 219ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  623): Slow operation: 146ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  623): Slow operation: 146ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  623): Unable to start service Intent { act=com.google.android.play.core.splitinstall.BIND_SPLIT_INSTALL_SERVICE xflg=0x4 pkg=com.android.vending } U=0: not found
+W/ActivityManager(  623): Unable to start service Intent { act=com.google.android.play.core.splitinstall.BIND_SPLIT_INSTALL_SERVICE xflg=0x4 pkg=com.android.vending } U=0: not found
+W/ActivityManager(  623): Slow operation: 97ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  623): Slow operation: 182ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  623): Slow operation: 416ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  623): Slow operation: 416ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  623): Slow operation: 538ms so far, now at finishAttachApplicationInner: after updateOomAdjLocked
+W/ActivityManager(  623): Slow operation: 57ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 58ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 58ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 65ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 85ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  623): Slow operation: 131ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  623): Slow operation: 165ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 195ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 195ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 195ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 199ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Service lookup failed: association not allowed between packages com.google.android.as.oss and com.google.android.gms
+W/ActivityManager(  623): Slow operation: 62ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 62ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 62ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 62ms so far, now at startProcess: done updating pids map
+--------- beginning of main
+E/ActivityManager(  623): Sending non-protected broadcast android.intent.action.UPDATE_CT_LOGS from system uid 1000 pkg android
+E/ActivityManager(  623): java.lang.Throwable
+E/ActivityManager(  623): 	at com.android.server.am.BroadcastController.checkBroadcastFromSystem(BroadcastController.java:2145)
+E/ActivityManager(  623): 	at com.android.server.am.BroadcastController.broadcastIntentLockedTraced(BroadcastController.java:1646)
+E/ActivityManager(  623): 	at com.android.server.am.BroadcastController.broadcastIntentLocked(BroadcastController.java:807)
+E/ActivityManager(  623): 	at com.android.server.am.BroadcastController.broadcastIntentInPackage(BroadcastController.java:774)
+E/ActivityManager(  623): 	at com.android.server.am.ActivityManagerService$LocalService.broadcastIntentInPackage(ActivityManagerService.java:17221)
+E/ActivityManager(  623): 	at com.android.server.am.PendingIntentRecord.sendInner(PendingIntentRecord.java:674)
+E/ActivityManager(  623): 	at com.android.server.am.PendingIntentRecord.sendWithResult(PendingIntentRecord.java:380)
+E/ActivityManager(  623): 	at com.android.server.am.ActivityManagerService.sendIntentSender(ActivityManagerService.java:5618)
+E/ActivityManager(  623): 	at android.app.PendingIntent.sendAndReturnResult(PendingIntent.java:1116)
+E/ActivityManager(  623): 	at android.app.PendingIntent.send(PendingIntent.java:1082)
+E/ActivityManager(  623): 	at com.android.server.alarm.AlarmManagerService$DeliveryTracker.deliverLocked(AlarmManagerService.java:5358)
+E/ActivityManager(  623): 	at com.android.server.alarm.AlarmManagerService.deliverAlarmsLocked(AlarmManagerService.java:4322)
+E/ActivityManager(  623): 	at com.android.server.alarm.AlarmManagerService$AlarmThread.run(AlarmManagerService.java:4598)
+W/ActivityManager(  623): Slow operation: 69ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 73ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 77ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 77ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 82ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 65ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  623): Slow operation: 89ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 97ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 97ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 97ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 97ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 284ms so far, now at attachApplicationLocked: before bindApplication
+W/ActivityManager(  623): Slow operation: 284ms so far, now at attachApplicationLocked: immediately before bindApplication
+W/ActivityManager(  623): Slow operation: 308ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  623): Slow operation: 344ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  623): Slow operation: 377ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  623): Slow operation: 65ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 216ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 266ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 274ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 277ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 151ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 153ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 153ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 156ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 70ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 70ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 70ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 70ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 85ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 52ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  623): Slow operation: 52ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 52ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 106ms so far, now at attachApplicationLocked: before bindApplication
+W/ActivityManager(  623): Slow operation: 107ms so far, now at attachApplicationLocked: immediately before bindApplication
+W/ActivityManager(  623): Slow operation: 107ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  623): Slow operation: 107ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  623): Slow operation: 124ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  623): Slow operation: 74ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 74ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 74ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 76ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 78ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 130ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 130ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 130ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 53ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 53ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 53ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 53ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 53ms so far, now at startProcess: done updating pids map
+E/ActivityManager(  623): Unable to freeze binder for 2455: -11
+W/ActivityManager(  623): Scheduling restart of crashed service com.android.devicelockcontroller/androidx.work.impl.background.systemjob.SystemJobService in 1000ms for connection
+W/ActivityManager(  623): Scheduling restart of crashed service com.android.devicelockcontroller/.DeviceLockControllerService in 10994ms for connection
+W/ActivityManager(  623): Slow operation: 55ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 55ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 56ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 56ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 62ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 113ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 121ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 121ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 121ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 123ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 183ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  623): Slow operation: 192ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  623): Slow operation: 68ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  623): Slow operation: 79ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 79ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 79ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 86ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): finishReceiver: no app for android.os.BinderProxy@5b4ff16
+W/ActivityManager(  623): Slow operation: 100ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 121ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 121ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 124ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Scheduling restart of crashed service com.google.android.ext.services/android.ext.services.autofill.InlineSuggestionRenderServiceImpl in 10000ms for connection
+W/ActivityManager(  623): finishReceiver: no app for android.os.BinderProxy@c826456
+W/ActivityManager(  623): Slow operation: 150ms so far, now at startProcess: done creating new process record
+W/ActivityManager(  623): Slow operation: 151ms so far, now at startProcess: stepping in to startProcess
+W/ActivityManager(  623): Slow operation: 159ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  623): Slow operation: 150ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 151ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 151ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 151ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 58ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 58ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 59ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 66ms so far, now at startProcess: done updating pids map
+E/ActivityManager(  623): Unable to freeze binder for 3396: -11
+W/ActivityManager(  623): Slow operation: 158ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 158ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 158ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 158ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): finishReceiver: no app for android.os.BinderProxy@a189848
+W/ActivityManager(  623): Slow operation: 53ms so far, now at startProcess: done creating new process record
+W/ActivityManager(  623): Slow operation: 53ms so far, now at startProcess: stepping in to startProcess
+W/ActivityManager(  623): Slow operation: 53ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  623): Slow operation: 65ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+E/ActivityManager(  623): Unable to freeze binder for 3550: -11
+W/ActivityManager(  623): finishReceiver: no app for android.os.BinderProxy@f309c17
+W/ActivityManager(  623): ProcessRecord{7d2b597 0:com.google.android.settings.intelligence/u0a136} is attached to a previous process 3550
+W/ActivityManager(  623): Slow operation: 612ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  623): Slow operation: 624ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 659ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 742ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 742ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 742ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): pid 3602 com.google.android.settings.intelligence sent binder code 6 with flags 2 to frozen apps and got error -74
+W/ActivityManager(  623): Slow operation: 125ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 125ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 125ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 126ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 69ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  623): Slow operation: 108ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 805ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 805ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 805ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 844ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 755ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  623): Slow operation: 812ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 1186ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 1205ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 1205ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 1205ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 1176ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  623): Slow operation: 1195ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 1279ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 1280ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 1280ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 1286ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 1142ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  623): Slow operation: 1171ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 1230ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 1230ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 1230ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 1235ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Background start not allowed: service Intent { xflg=0x4 cmp=com.google.android.apps.messaging/.shared.datamodel.action.execution.ActionExecutorImpl$EmptyService } to com.google.android.apps.messaging/.shared.datamodel.action.execution.ActionExecutorImpl$EmptyService from pid=3729 uid=10144 pkg=com.google.android.apps.messaging startFg?=false
+W/ActivityManager(  623): Background start not allowed: service Intent { xflg=0x4 cmp=com.google.android.apps.messaging/.shared.datamodel.action.execution.ActionExecutorImpl$EmptyService } to com.google.android.apps.messaging/.shared.datamodel.action.execution.ActionExecutorImpl$EmptyService from pid=3729 uid=10144 pkg=com.google.android.apps.messaging startFg?=false
+W/ActivityManager(  623): Background start not allowed: service Intent { xflg=0x4 cmp=com.google.android.apps.messaging/.shared.datamodel.action.execution.ActionExecutorImpl$EmptyService } to com.google.android.apps.messaging/.shared.datamodel.action.execution.ActionExecutorImpl$EmptyService from pid=3729 uid=10144 pkg=com.google.android.apps.messaging startFg?=false
+W/ActivityManager(  623): Foreground service started from background can not have location/camera/microphone access: service com.google.android.apps.messaging/com.google.apps.tiktok.concurrent.InternalForegroundService
+W/ActivityManager(  623): pid 3602 com.google.android.settings.intelligence sent binder code 6 with flags 2 to frozen apps and got error -74
+W/ActivityManager(  623): Foreground service started from background can not have location/camera/microphone access: service com.google.android.apps.messaging/com.google.apps.tiktok.concurrent.InternalForegroundService
+W/ActivityManager(  623): Slow operation: 102ms so far, now at startProcess: building args
+W/ActivityManager(  623): Slow operation: 126ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  623): Slow operation: 103ms so far, now at startProcess: asking zygote to start proc
+W/ActivityManager(  623): Slow operation: 240ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 274ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 362ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 362ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 362ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 76ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  623): Slow operation: 77ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  623): Slow operation: 79ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  623): Unable to start service Intent { act=grpc.io.action.BIND xflg=0x4 cmp=com.google.android.apps.stargate/.endpointservice.GrpcEndpointService } U=0: not found
+W/ActivityManager(  623): Unbind failed: could not find connection for android.os.BinderProxy@b7b4197
+W/ActivityManager(  623): Unable to start service Intent { act=grpc.io.action.BIND xflg=0x4 cmp=com.google.android.apps.stargate/.endpointservice.GrpcEndpointService } U=0: not found
+W/ActivityManager(  623): Unbind failed: could not find connection for android.os.BinderProxy@595f05
+W/ActivityManager(  623): Slow operation: 167ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 168ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 168ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 171ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 75ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  623): Slow operation: 75ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  623): Slow operation: 78ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  623): Slow operation: 71ms so far, now at startProcess: done starting proc!
+W/ActivityManager(  623): Slow operation: 130ms so far, now at startProcess: done updating battery stats
+W/ActivityManager(  623): Slow operation: 174ms so far, now at startProcess: building log message
+W/ActivityManager(  623): Slow operation: 174ms so far, now at startProcess: starting to update pids map
+W/ActivityManager(  623): Slow operation: 137ms so far, now at startProcess: returned from zygote!
+W/ActivityManager(  623): Slow operation: 198ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Slow operation: 68ms so far, now at attachApplicationLocked: before bindApplication
+W/ActivityManager(  623): Slow operation: 68ms so far, now at attachApplicationLocked: immediately before bindApplication
+W/ActivityManager(  623): Slow operation: 85ms so far, now at attachApplicationLocked: immediately after bindApplication
+W/ActivityManager(  623): Slow operation: 85ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+W/ActivityManager(  623): Slow operation: 93ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  623): Slow operation: 64ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  623): Slow operation: 64ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  623): Unable to start service Intent { act=grpc.io.action.BIND xflg=0x4 cmp=com.google.android.apps.stargate/.endpointservice.GrpcEndpointService } U=0: not found
+W/ActivityManager(  623): Unbind failed: could not find connection for android.os.BinderProxy@5be0300
+W/ActivityManager(  623): Receiver with filter android.content.IntentFilter@c831542 already registered for pid 3997, callerPackage is com.google.android.apps.messaging
+W/ActivityManager(  623): Receiver with filter android.content.IntentFilter@4d06884 already registered for pid 3997, callerPackage is com.google.android.apps.messaging
+W/ActivityManager(  623): Slow operation: 60ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  623): Slow operation: 68ms so far, now at startProcess: done updating pids map
+W/ActivityManager(  623): Unable to start service Intent { act=grpc.io.action.BIND xflg=0x4 cmp=com.google.android.apps.stargate/.endpointservice.GrpcEndpointService } U=0: not found
+W/ActivityManager(  623): Unbind failed: could not find connection for android.os.BinderProxy@10a173
+W/ActivityManager(  623): Slow operation: 51ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+W/ActivityManager(  623): Slow operation: 72ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+W/ActivityManager(  623): Slow operation: 72ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+W/ActivityManager(  623): Unable to start service Intent { act=grpc.io.action.BIND xflg=0x4 cmp=com.google.android.apps.stargate/.endpointservice.GrpcEndpointService } U=0: not found
+W/ActivityManager(  623): Unbind failed: could not find connection for android.os.BinderProxy@dcb44c3
+W/ActivityManager(  623): Foreground service started from background can not have location/camera/microphone access: service com.google.android.apps.messaging/com.google.apps.tiktok.concurrent.InternalForegroundService
+W/ActivityManager(  623): Unable to start service Intent { act=grpc.io.action.BIND xflg=0x4 cmp=com.google.android.apps.stargate/.endpointservice.GrpcEndpointService } U=0: not found
+W/ActivityManager(  623): Unbind failed: could not find connection for android.os.BinderProxy@7cffd38
+W/ActivityManager(  623): Unable to start service Intent { act=grpc.io.action.BIND xflg=0x4 cmp=com.google.android.apps.stargate/.endpointservice.GrpcEndpointService } U=0: not found
+W/ActivityManager(  623): Unbind failed: could not find connection for android.os.BinderProxy@ad84cae
+W/ActivityManager(  623): pid 1587 com.google.android.gms sent binder code 1 with flags 2 to frozen apps and got error -2147483646
+E/ActivityManager(  623): Unable to freeze binder for 2679: -11
+W/ActivityManager(  623): pid 623 system sent binder code 18 with flags 1 to frozen apps and got error -32
+W/ActivityManager(  623): Error shutting down UiAutomationConnection
+W/ActivityManager(  623): setHasOverlayUi called on unknown pid: 2679
