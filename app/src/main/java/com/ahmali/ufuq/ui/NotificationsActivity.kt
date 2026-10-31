@@ -175,29 +175,10 @@ class NotificationsActivity : BaseActivity() {
             tip.addView(buttons, matchWrap().apply { topMargin = dp(10) })
             body.addView(tip, matchWrap().apply { topMargin = dp(20) })
         }
-
-        addLog()
     }
 
     private var shouldShowBlockedNote = false
     private var testResult: String? = null
-    private var showLog = false
-
-    /** What happened to recent reminders on this phone, newest first. */
-    private fun addLog() {
-        body.addView(textButton(getString(if (showLog) R.string.log_hide else R.string.log_show)) {
-            showLog = !showLog
-            render()
-        }.apply { gravity = Gravity.CENTER_VERTICAL or Gravity.START; setPadding(0, 0, 0, 0) }, wrapWrap().apply { topMargin = dp(16) })
-        if (!showLog) return
-        val lines = prefs.notifLog.ifBlank { getString(R.string.log_empty) }
-        body.addView(text(lines, 12f, Palette.BODY).lines(1.4f).apply {
-            typeface = android.graphics.Typeface.MONOSPACE
-            setTextIsSelectable(true)
-            background = rounded(Palette.CARD, dpf(12))
-            setPadding(dp(12), dp(10), dp(12), dp(10))
-        }, matchWrap().apply { topMargin = dp(4) })
-    }
 
     /** "Next: Maghrib at 6:12 PM", noting when alarms may be a little late. */
     private fun nextLine(): String? {
