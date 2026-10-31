@@ -49,19 +49,28 @@ PY
   fi
 }
 
+# Play upload key from GitHub secrets (only when the workflow passes them in).
+if [ -n "${UFUQ_UPLOAD_KEYSTORE_B64:-}" ]; then
+  export UFUQ_UPLOAD_STORE_FILE="$RUNNER_TEMP/upload.jks"
+  echo "$UFUQ_UPLOAD_KEYSTORE_B64" | base64 -d > "$UFUQ_UPLOAD_STORE_FILE"
+  echo "Signing release with the Play upload key" >> "$OUT/status.txt"
+fi
+
 step "City database" python3 tools/build_cities.py
 step "Reference data" bash -c "cd tools/reference && npm install --no-audit --no-fund && npm run gen"
 step "Unit tests" gradle :app:testDebugUnitTest --stacktrace --console=plain
 collect
 LINT_TXT=app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt
 step "Lint" bash -c "gradle :app:lintDebug --console=plain; rc=\$?; cat $LINT_TXT 2>/dev/null; exit \$rc"
-step "Assemble" gradle :app:assembleDebug :app:assembleDebugAndroidTest :app:assembleRelease --console=plain
+step "Assemble" gradle :app:assembleDebug :app:assembleDebugAndroidTest :app:assembleRelease :app:bundleRelease --console=plain
 collect
 
 mkdir -p apks/debug apks/androidTest/debug apks/release
 cp app/build/outputs/apk/debug/*.apk apks/debug/
 cp app/build/outputs/apk/androidTest/debug/*.apk apks/androidTest/debug/
 cp app/build/outputs/apk/release/*.apk apks/release/
+# The .aab is what gets uploaded to Google Play.
+cp app/build/outputs/bundle/release/*.aab apks/release/ 2>/dev/null || true
 
 REL=$(ls apks/release/*.apk | head -1)
 SIZE=$(stat -c%s "$REL")

@@ -2,6 +2,12 @@ plugins {
     id("com.android.application")
 }
 
+// Each CI run gets a higher version code (Google Play requires every upload to increase it).
+val buildNumber = System.getenv("GITHUB_RUN_NUMBER")?.toIntOrNull() ?: 1
+
+// Play upload key: supplied by CI from GitHub secrets, never stored in the repo.
+val uploadStore = System.getenv("UFUQ_UPLOAD_STORE_FILE")?.let { file(it) }?.takeIf { it.exists() }
+
 android {
     namespace = "com.ahmali.ufuq"
     compileSdk = 36
@@ -11,16 +17,27 @@ android {
         // Android 6.0+. java.time on 6.0–7.1 comes from core library desugaring.
         minSdk = 23
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = buildNumber
+        versionName = "1.0.$buildNumber"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        if (uploadStore != null) {
+            create("upload") {
+                storeFile = uploadStore
+                storePassword = System.getenv("UFUQ_UPLOAD_STORE_PASSWORD")
+                keyAlias = System.getenv("UFUQ_UPLOAD_KEY_ALIAS")
+                keyPassword = System.getenv("UFUQ_UPLOAD_KEY_PASSWORD")
+            }
+        }
     }
 
     buildTypes {
         release {
-            // Signed with the debug key so CI can install and time the release build.
-            // Replace with the Play upload key (kept out of the repo) before publishing.
-            signingConfig = signingConfigs.getByName("debug")
+            // The Play upload key when CI has it; otherwise the debug key, so test builds
+            // still install (those can't be uploaded to Play).
+            signingConfig = signingConfigs.getByName(if (uploadStore != null) "upload" else "debug")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(
