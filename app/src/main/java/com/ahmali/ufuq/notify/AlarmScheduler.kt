@@ -15,6 +15,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import com.ahmali.ufuq.R
 import com.ahmali.ufuq.core.Prayer
+import com.ahmali.ufuq.data.AlertStyle
 import com.ahmali.ufuq.data.Prefs
 import com.ahmali.ufuq.data.Schedule
 import com.ahmali.ufuq.ui.MainActivity
@@ -34,7 +35,17 @@ import java.util.Locale
  * Nothing is scheduled (and nothing wakes the phone) while notifications are off.
  */
 object AlarmScheduler {
-    const val CHANNEL_ID = "prayer_times_quiet"
+    /** One channel per alert style; Android fixes a channel's sound once it is created. */
+    private const val CHANNEL_SILENT = "prayer_times_quiet"
+    private const val CHANNEL_VIBRATE = "prayer_times_vibrate"
+    private const val CHANNEL_SOUND = "prayer_times_sound"
+    private val ALL_CHANNELS = listOf(CHANNEL_SILENT, CHANNEL_VIBRATE, CHANNEL_SOUND)
+
+    fun channelId(style: AlertStyle): String = when (style) {
+        AlertStyle.SILENT -> CHANNEL_SILENT
+        AlertStyle.VIBRATE -> CHANNEL_VIBRATE
+        AlertStyle.SOUND -> CHANNEL_SOUND
+    }
     private const val EXTRA_PRAYER = "prayer"
     private const val EXTRA_AT = "at"
     private const val AHEAD = 4
@@ -63,7 +74,7 @@ object AlarmScheduler {
         val nm = ctx.getSystemService(NotificationManager::class.java) ?: return false
         if (Build.VERSION.SDK_INT >= 24 && !nm.areNotificationsEnabled()) return true
         if (Build.VERSION.SDK_INT >= 26) {
-            val ch = nm.getNotificationChannel(CHANNEL_ID)
+            val ch = nm.getNotificationChannel(channelId(Prefs(ctx).alertStyle))
             if (ch != null && ch.importance == NotificationManager.IMPORTANCE_NONE) return true
         }
         return false
@@ -201,21 +212,31 @@ object AlarmScheduler {
         }
     }
 
+    /**
+     * Makes sure the channel for the chosen alert style exists, and removes the other styles'
+     * channels so system settings only ever lists one "Prayer times" category.
+     */
     fun ensureChannel(ctx: Context) {
         if (Build.VERSION.SDK_INT < 26) return
         val nm = ctx.getSystemService(NotificationManager::class.java) ?: return
-        if (nm.getNotificationChannel(CHANNEL_ID) != null) return
-        val ch = NotificationChannel(CHANNEL_ID, ctx.getString(R.string.channel_name), NotificationManager.IMPORTANCE_DEFAULT).apply {
+        val style = Prefs(ctx).alertStyle
+        val id = channelId(style)
+        for (other in ALL_CHANNELS) {
+            if (other != id && nm.getNotificationChannel(other) != null) nm.deleteNotificationChannel(other)
+        }
+        if (nm.getNotificationChannel(id) != null) return
+        val ch = NotificationChannel(id, ctx.getString(R.string.channel_name), NotificationManager.IMPORTANCE_DEFAULT).apply {
             description = ctx.getString(R.string.channel_desc)
-            setSound(null, null)
-            enableVibration(false)
+            // SOUND keeps the channel's default: the phone's notification sound.
+            if (style != AlertStyle.SOUND) setSound(null, null)
+            enableVibration(style == AlertStyle.VIBRATE)
             enableLights(false)
             setShowBadge(false)
         }
         nm.createNotificationChannel(ch)
     }
 
-    /** Builds the quiet "Maghrib — 6:42 PM" notification. */
+    /** Builds the "Maghrib at 6:42 PM" notification. */
     fun post(ctx: Context, prayer: Prayer, atMillis: Long) {
         val prefs = Prefs(ctx)
         val zone = prefs.currentPlace()?.zone ?: java.time.ZoneId.systemDefault()
@@ -244,7 +265,8 @@ object AlarmScheduler {
             ctx, 2, Intent(ctx, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
-        val builder = if (Build.VERSION.SDK_INT >= 26) Notification.Builder(ctx, CHANNEL_ID) else Notification.Builder(ctx)
+        val style = Prefs(ctx).alertStyle
+        val builder = if (Build.VERSION.SDK_INT >= 26) Notification.Builder(ctx, channelId(style)) else Notification.Builder(ctx)
         builder.setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(title)
             .setWhen(whenMillis)
@@ -256,7 +278,13 @@ object AlarmScheduler {
             .setCategory(Notification.CATEGORY_REMINDER)
         if (text != null) builder.setContentText(text)
         if (Build.VERSION.SDK_INT < 26) {
-            builder.setDefaults(0).setSound(null).setVibrate(null).setPriority(Notification.PRIORITY_DEFAULT)
+            // Before Android 8 there are no channels: the alert is set on each notification.
+            when (style) {
+                AlertStyle.SILENT -> builder.setDefaults(0).setSound(null).setVibrate(null)
+                AlertStyle.VIBRATE -> builder.setDefaults(Notification.DEFAULT_VIBRATE).setSound(null)
+                AlertStyle.SOUND -> builder.setDefaults(Notification.DEFAULT_SOUND).setVibrate(null)
+            }
+            builder.setPriority(Notification.PRIORITY_DEFAULT)
         }
         val nm = ctx.getSystemService(NotificationManager::class.java) ?: return
         nm.notify(id, builder.build())

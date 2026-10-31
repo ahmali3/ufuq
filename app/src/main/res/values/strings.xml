@@ -138,7 +138,11 @@
     <!-- Notifications -->
     <string name="notif_title">Notifications</string>
     <string name="notif_master">Prayer notifications</string>
-    <string name="notif_master_sub">Silent: no sound or vibration</string>
+    <string name="notif_master_sub">At the prayer times you choose</string>
+    <string name="alert_style">Alert</string>
+    <string name="alert_silent">Silent</string>
+    <string name="alert_vibrate">Vibrate</string>
+    <string name="alert_sound">Sound</string>
     <string name="notify_me_for">NOTIFY ME FOR</string>
     <string name="notif_hidden_note">Asr and Isha are hidden with this method. Turn on “Show Asr and Isha times” in Settings to add them.</string>
     <string name="preview">PREVIEW</string>
@@ -152,8 +156,8 @@
     <string name="next_notif_inexact">It may arrive a few minutes late until exact alarms are allowed.</string>
     <string name="test_notif">Send a test notification</string>
     <string name="test_notif_title">Ufuq notifications are working</string>
-    <string name="test_notif_body">Prayer notifications will look like this, without sound.</string>
-    <string name="test_notif_sent">Sent. Pull down your notification shade to check it’s there; it’s silent, so it won’t make a sound.</string>
+    <string name="test_notif_body">Prayer notifications will look like this.</string>
+    <string name="test_notif_sent">Sent. Pull down your notification shade to check it’s there.</string>
     <string name="missed_body">Your phone didn’t let the %1$s reminder at %2$s go off. Phones like vivo stop apps in the background to save battery. Allow Ufuq to run in the background in battery settings, and turn on Auto-start for it in app settings.</string>
     <string name="missed_reminder">last</string>
     <string name="missed_app_settings">App settings</string>
@@ -162,7 +166,7 @@
     <string name="allow_exact">Allow exact alarms</string>
     <string name="notif_blocked">Notifications are blocked for Ufuq. Allow them in system settings.</string>
     <string name="channel_name">Prayer times</string>
-    <string name="channel_desc">Quiet reminders at the prayer times you choose</string>
+    <string name="channel_desc">Reminders at the prayer times you choose</string>
 
     <!-- Adjustments -->
     <string name="adj_title">Manual adjustments</string>

@@ -13,15 +13,16 @@ import android.widget.FrameLayout
 import android.widget.LinearLayout
 import com.ahmali.ufuq.R
 import com.ahmali.ufuq.core.Prayer
+import com.ahmali.ufuq.data.AlertStyle
 import com.ahmali.ufuq.data.Prefs
 import com.ahmali.ufuq.data.Schedule
 import com.ahmali.ufuq.notify.AlarmScheduler
 import java.util.Locale
 
 /**
- * Quiet notifications, off by default. Permissions are asked only when switched on:
- * notifications (Android 13+), then exact alarms (Android 12+, optional — falls back to
- * slightly-late inexact alarms and says so).
+ * Prayer notifications, off by default and silent unless the user picks vibrate or sound.
+ * Permissions are asked only when switched on: notifications (Android 13+), then exact alarms
+ * (Android 12+, optional — falls back to slightly-late inexact alarms and says so).
  */
 class NotificationsActivity : BaseActivity() {
 
@@ -54,6 +55,29 @@ class NotificationsActivity : BaseActivity() {
                 render()
             }
         })
+        if (on) {
+            master.addView(rowDivider())
+            val alert = vbox().apply { setPaddingRelative(dp(16), dp(12), dp(16), dp(14)) }
+            alert.addView(text(getString(R.string.alert_style), 16f))
+            val choices = hbox()
+            val current = prefs.alertStyle
+            listOf(
+                AlertStyle.SILENT to R.string.alert_silent,
+                AlertStyle.VIBRATE to R.string.alert_vibrate,
+                AlertStyle.SOUND to R.string.alert_sound
+            ).forEachIndexed { i, (style, label) ->
+                choices.addView(segment(getString(label), style == current) {
+                    if (prefs.alertStyle != style) {
+                        prefs.alertStyle = style
+                        AlarmScheduler.ensureChannel(this)
+                        testResult = null
+                        render()
+                    }
+                }, weight1().apply { if (i > 0) marginStart = dp(8) })
+            }
+            alert.addView(choices, matchWrap().apply { topMargin = dp(10) })
+            master.addView(alert, matchWrap())
+        }
         body.addView(master, matchWrap().apply { topMargin = dp(8) })
 
         if (on) {
@@ -232,6 +256,22 @@ class NotificationsActivity : BaseActivity() {
             render()
         }
     }
+
+    /** One option in the alert-style row; brown when selected. */
+    private fun segment(label: String, selected: Boolean, onClick: () -> Unit): android.widget.TextView =
+        text(label, 13f, if (selected) 0xFFFFFFFF.toInt() else Palette.ACCENT, Fonts.medium).apply {
+            gravity = Gravity.CENTER
+            minHeight = dp(40)
+            setPadding(dp(8), 0, dp(8), 0)
+            background = ripple(
+                rounded(if (selected) Palette.ACCENT else 0, dpf(20), Palette.ACCENT, dp(1)),
+                rounded(0xFFFFFFFF.toInt(), dpf(20))
+            )
+            isClickable = true
+            isFocusable = true
+            isSelected = selected
+            setOnClickListener { onClick() }
+        }
 
     private fun noteCard(message: String, action: String, onAction: () -> Unit): LinearLayout =
         vbox().apply {

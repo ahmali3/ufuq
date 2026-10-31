@@ -181,6 +181,21 @@ class AppFlowTest {
 
             // A notification actually posts (silently) on every Android version.
             AlarmScheduler.post(ctx, com.ahmali.ufuq.core.Prayer.MAGHRIB, System.currentTimeMillis())
+
+            // Each alert style can be picked and posts without errors.
+            for ((label, style) in listOf(
+                R.string.alert_vibrate to com.ahmali.ufuq.data.AlertStyle.VIBRATE,
+                R.string.alert_sound to com.ahmali.ufuq.data.AlertStyle.SOUND,
+                R.string.alert_silent to com.ahmali.ufuq.data.AlertStyle.SILENT
+            )) {
+                waitFor(withText(s(label)))
+                onView(withText(s(label))).perform(click())
+                val until = SystemClock.uptimeMillis() + 5_000
+                while (Prefs(ctx).alertStyle != style && SystemClock.uptimeMillis() < until) SystemClock.sleep(100)
+                assertTrue("alert style $style", Prefs(ctx).alertStyle == style)
+                if (style == com.ahmali.ufuq.data.AlertStyle.SOUND) shot("14b_notifications_sound")
+                AlarmScheduler.post(ctx, com.ahmali.ufuq.core.Prayer.MAGHRIB, System.currentTimeMillis())
+            }
         }
     }
 

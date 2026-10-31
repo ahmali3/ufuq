@@ -201,6 +201,11 @@ class Prefs(context: Context) {
 
     fun setNotifyFor(p: Prayer, on: Boolean) = sp.edit().putBoolean("notif_${p.name}", on).apply()
 
+    /** How a reminder alerts: silent (default), vibrate, or the phone's notification sound. */
+    var alertStyle: AlertStyle
+        get() = AlertStyle.entries.firstOrNull { it.id == sp.getString("alertStyle", null) } ?: AlertStyle.SILENT
+        set(v) = sp.edit().putString("alertStyle", v.id).apply()
+
     var batteryTipDismissed: Boolean
         get() = sp.getBoolean("batteryTip", false)
         set(v) = sp.edit().putBoolean("batteryTip", v).apply()
@@ -274,3 +279,5 @@ class Prefs(context: Context) {
         )
     }
 }
+
+enum class AlertStyle(val id: String) { SILENT("silent"), VIBRATE("vibrate"), SOUND("sound") }
