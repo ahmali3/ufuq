@@ -25,7 +25,9 @@ class AboutActivity : BaseActivity() {
             textDirection = android.view.View.TEXT_DIRECTION_RTL
         }, wrapWrap().apply { marginStart = dp(8) })
         head.addView(name, wrapWrap().apply { topMargin = dp(8) })
-        head.addView(text(getString(R.string.version, BuildConfig.VERSION_NAME), 13f, Palette.MUTED))
+        head.addView(text(getString(R.string.version, BuildConfig.VERSION_NAME), 13f, Palette.MUTED).apply {
+            gravity = Gravity.CENTER
+        }, matchWrap().apply { topMargin = dp(2) })
         head.addView(text(getString(R.string.horizon_meaning), 13f, Palette.MUTED).lines().apply {
             gravity = Gravity.CENTER
             setPadding(dp(24), dp(6), dp(24), 0)
