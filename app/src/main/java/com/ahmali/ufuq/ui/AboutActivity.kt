@@ -42,9 +42,30 @@ class AboutActivity : BaseActivity() {
             } catch (e: Exception) { }
         }.apply { gravity = Gravity.CENTER_VERTICAL or Gravity.START; setPadding(0, 0, 0, 0) }, wrapWrap())
         body.addView(privacy)
+        val contact = section(getString(R.string.contact), listOf(getString(R.string.contact_body)))
+        contact.addView(textButton(getString(R.string.contact_email)) { emailDeveloper() }.apply {
+            gravity = Gravity.CENTER_VERTICAL or Gravity.START
+            setPadding(0, 0, 0, 0)
+            contentDescription = getString(R.string.contact_email_desc, getString(R.string.contact_email))
+        }, wrapWrap())
+        body.addView(contact)
         body.addView(section(getString(R.string.credits), listOf(getString(R.string.credits_body))))
         body.addView(text(getString(R.string.made_by), 12f, Palette.FAINT).apply { gravity = Gravity.CENTER },
             matchWrap().apply { topMargin = dp(24) })
+    }
+
+    /** Opens the user's email app (no internet permission needed: the email app sends it). */
+    private fun emailDeveloper() {
+        val i = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + getString(R.string.contact_email)))
+            .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.contact_subject, BuildConfig.VERSION_NAME))
+        try {
+            startActivity(i)
+        } catch (e: Exception) {
+            // No email app: copy the address instead.
+            val cm = getSystemService(android.content.ClipboardManager::class.java)
+            cm?.setPrimaryClip(android.content.ClipData.newPlainText("email", getString(R.string.contact_email)))
+            android.widget.Toast.makeText(this, getString(R.string.contact_copied), android.widget.Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun section(title: String, paragraphs: List<String>): LinearLayout = card().apply {
