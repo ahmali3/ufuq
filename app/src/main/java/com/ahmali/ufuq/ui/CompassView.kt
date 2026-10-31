@@ -4,15 +4,15 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Path
-import android.graphics.RectF
 import android.view.View
 import kotlin.math.cos
 import kotlin.math.min
 import kotlin.math.sin
 
 /**
- * Compass dial that turns with the phone, with a two-tone needle pointing at the Qibla and a
- * small Kaaba on the ring at its bearing. The fixed line at the top is where the phone points.
+ * Filled compass disc that turns with the phone (ticks and N, E, S, W), a two-tone needle
+ * pointing at the Qibla, and a small 3D Kaaba on the rim at its bearing. The fixed marker at
+ * the top is where the phone points.
  * When [facing], a soft brown glow rings the dial.
  *
  * Drawn on a 260-unit square (the design's coordinates), scaled to the view.
@@ -59,7 +59,6 @@ class CompassView(context: Context) : View(context) {
     }
     private val tip = Path()
     private val tail = Path()
-    private val rect = RectF()
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val w = MeasureSpec.getSize(widthMeasureSpec)
@@ -79,33 +78,46 @@ class CompassView(context: Context) : View(context) {
         if (facing) {
             stroke.color = (accent and 0x00FFFFFF) or (0x40 shl 24)
             stroke.strokeWidth = 10f
-            canvas.drawCircle(c, c, 105f, stroke)
+            canvas.drawCircle(c, c, 114f, stroke)
         }
 
-        // Fixed "phone points here" line.
-        stroke.color = Palette.INK
-        stroke.strokeWidth = 2f
-        canvas.drawLine(c, 4f, c, 20f, stroke)
+        // Fixed "phone points here" marker.
+        fill.color = Palette.INK
+        tip.reset()
+        tip.moveTo(124f, 0f); tip.lineTo(136f, 0f); tip.lineTo(c, 11f); tip.close()
+        canvas.drawPath(tip, fill)
 
-        // Ring.
+        // Filled disc with a lighter centre.
+        fill.color = 0xFFEADFCB.toInt()
+        canvas.drawCircle(c, c, 112f, fill)
         stroke.color = 0xFFD6C7AC.toInt()
         stroke.strokeWidth = hair
-        canvas.drawCircle(c, c, 105f, stroke)
+        canvas.drawCircle(c, c, 112f, stroke)
+        fill.color = (Palette.BG and 0x00FFFFFF) or (0x8C shl 24)
+        canvas.drawCircle(c, c, 64f, fill)
 
-        // Dial: ticks every 5°, longer every 30°, and N. Turns against the heading.
+        // Dial: ticks every 5°, then N, E, S, W. Turns against the heading.
         canvas.save()
         canvas.rotate(-heading, c, c)
-        stroke.color = 0xFFB09D80.toInt()
+        stroke.color = 0xFFA8957A.toInt()
         stroke.strokeCap = Paint.Cap.BUTT
         for (i in 0 until 72) {
+            val major = i % 6 == 0
+            stroke.strokeWidth = maxOf(if (major) 1.6f else 1f, hair)
             canvas.save()
             canvas.rotate(i * 5f, c, c)
-            canvas.drawLine(c, 25f, c, if (i % 6 == 0) 37f else 32f, stroke)
+            canvas.drawLine(c, 22f, c, if (major) 34f else if (i % 2 == 0) 30f else 27f, stroke)
             canvas.restore()
         }
         stroke.strokeCap = Paint.Cap.ROUND
-        label.textSize = 13f
-        canvas.drawText("N", c, 56f, label)
+        for ((i, letter) in listOf("N", "E", "S", "W").withIndex()) {
+            canvas.save()
+            canvas.rotate(i * 90f, c, c)
+            label.color = if (i == 0) accent else 0xFF8C7C64.toInt()
+            label.textSize = if (i == 0) 16f else 12f
+            canvas.drawText(letter, c, 56f, label)
+            canvas.restore()
+        }
         canvas.restore()
 
         // Needle toward the Qibla: brown tip, sand tail.
@@ -129,17 +141,27 @@ class CompassView(context: Context) : View(context) {
         stroke.strokeWidth = 2f
         canvas.drawCircle(c, c, 7f, stroke)
 
-        // Kaaba on the ring at the Qibla bearing, kept upright.
+        // 3D Kaaba on the rim at the Qibla bearing, kept upright.
         val rad = Math.toRadians(rel.toDouble())
-        val kx = c + 105f * sin(rad).toFloat()
-        val ky = c - 105f * cos(rad).toFloat()
-        fill.color = Palette.INK
-        rect.set(kx - 12f, ky - 12f, kx + 12f, ky + 12f)
-        canvas.drawRoundRect(rect, 3f, 3f, fill)
-        fill.color = 0xFFC9A35A.toInt()
-        rect.set(kx - 12f, ky - 6f, kx + 12f, ky - 2.5f)
-        canvas.drawRect(rect, fill)
+        canvas.save()
+        canvas.translate(c + 112f * sin(rad).toFloat(), c - 112f * cos(rad).toFloat())
+        face(canvas, 0xFF45443D.toInt(), 0f, -14f, 13f, -8f, 0f, -2f, -13f, -8f)   // top
+        face(canvas, 0xFF1A1A17.toInt(), -13f, -8f, 0f, -2f, 0f, 14f, -13f, 8f)    // left
+        face(canvas, 0xFF2C2B26.toInt(), 13f, -8f, 0f, -2f, 0f, 14f, 13f, 8f)      // right
+        face(canvas, 0xFFC9A35A.toInt(), -13f, -4f, 0f, 2f, 0f, 5.5f, -13f, -0.5f) // gold band, left
+        face(canvas, 0xFFB08A40.toInt(), 13f, -4f, 0f, 2f, 0f, 5.5f, 13f, -0.5f)   // gold band, right
+        canvas.restore()
 
         canvas.restore()
+    }
+
+    private fun face(canvas: Canvas, color: Int, vararg p: Float) {
+        tail.reset()
+        tail.moveTo(p[0], p[1])
+        var i = 2
+        while (i < p.size) { tail.lineTo(p[i], p[i + 1]); i += 2 }
+        tail.close()
+        fill.color = color
+        canvas.drawPath(tail, fill)
     }
 }
