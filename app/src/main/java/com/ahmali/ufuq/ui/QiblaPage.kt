@@ -27,8 +27,6 @@ class QiblaPage(
     }
     private var compass: CompassView? = null
     private var instruction: TextView? = null
-    private var accuracyText: TextView? = null
-    private var accuracyDot: android.view.View? = null
     private var calibrate: TextView? = null
     private var bearing = 0.0
     private var lastAnnounced = Int.MIN_VALUE
@@ -79,17 +77,12 @@ class QiblaPage(
             gravity = Gravity.CENTER_HORIZONTAL
         })
 
-        val acc = hbox().apply { gravity = Gravity.CENTER }
-        accuracyDot = android.view.View(this).apply { background = rounded(Palette.OK, dpf(4)) }
-        acc.addView(accuracyDot, LinearLayout.LayoutParams(dp(8), dp(8)).apply { marginEnd = dp(8) })
-        accuracyText = text(getString(R.string.accuracy_high), 13f, Palette.MUTED)
-        acc.addView(accuracyText)
-        body.addView(acc, matchWrap().apply { topMargin = dp(28) })
+        // Only shown when the phone says the compass is unreliable.
         calibrate = text(getString(R.string.calibrate), 13f, Palette.ACCENT, Fonts.medium).apply {
             gravity = Gravity.CENTER
             visibility = android.view.View.GONE
         }
-        body.addView(calibrate, matchWrap().apply { topMargin = dp(6) })
+        body.addView(calibrate, matchWrap().apply { topMargin = dp(28) })
         body.addView(text(getString(R.string.keep_away), 12f, Palette.FAINT).apply { gravity = Gravity.CENTER }, matchWrap().apply { topMargin = dp(8) })
     }
 
@@ -125,13 +118,6 @@ class QiblaPage(
         } else if (!facing) {
             lastAnnounced = deg
         }
-        val (label, color) = when (accuracy) {
-            SensorManager.SENSOR_STATUS_ACCURACY_HIGH -> R.string.accuracy_high to Palette.OK
-            SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM -> R.string.accuracy_medium to Palette.WARN
-            else -> R.string.accuracy_low to 0xFFB3412C.toInt()
-        }
-        accuracyText?.text = activity.getString(label)
-        accuracyDot?.background = rounded(color, activity.dpf(4))
         calibrate?.visibility = if (accuracy < SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM) android.view.View.VISIBLE else android.view.View.GONE
     }
 }

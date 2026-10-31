@@ -50,9 +50,6 @@
     <string name="facing_qibla">Facing Qibla</string>
     <string name="hold_flat">Hold the phone flat</string>
     <string name="qibla_info">Qibla %1$s° · %2$s km</string>
-    <string name="accuracy_high">Compass accuracy: high</string>
-    <string name="accuracy_medium">Compass accuracy: medium</string>
-    <string name="accuracy_low">Compass accuracy: low</string>
     <string name="calibrate">Move your phone in a figure-8 to calibrate</string>
     <string name="keep_away">Keep away from metal and magnets for accuracy.</string>
     <string name="no_compass">This phone has no compass. The Qibla is %1$s° clockwise from true north.</string>
