@@ -71,6 +71,9 @@ cp app/build/outputs/apk/androidTest/debug/*.apk apks/androidTest/debug/
 cp app/build/outputs/apk/release/*.apk apks/release/
 # The .aab is what gets uploaded to Google Play.
 cp app/build/outputs/bundle/release/*.aab apks/release/ 2>/dev/null || true
+# Also publish it with the results, so a release can be signed outside CI when the upload
+# key isn't set up as a GitHub secret.
+cp app/build/outputs/bundle/release/*.aab "$OUT/" 2>/dev/null || true
 
 REL=$(ls apks/release/*.apk | head -1)
 SIZE=$(stat -c%s "$REL")
