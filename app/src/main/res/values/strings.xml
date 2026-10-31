@@ -146,7 +146,7 @@
     <string name="notif_hidden_note">Asr and Isha are hidden with this method. Turn on “Show Asr and Isha times” in Settings to add them.</string>
     <string name="preview">PREVIEW</string>
     <string name="preview_now">Ufuq · now</string>
-    <string name="notif_text">%1$s — %2$s</string>
+    <string name="notif_text">%1$s at %2$s</string>
     <string name="battery_title">Notifications arriving late?</string>
     <string name="battery_body">Some phones, like vivo and Xiaomi, stop apps in the background to save battery, and the notifications never arrive. In your phone\'s battery settings, set Ufuq to unrestricted or allowed in the background (vivo calls it “Background power consumption”), and turn on Auto-start if your phone has it.</string>
     <string name="battery_button">Battery settings</string>
