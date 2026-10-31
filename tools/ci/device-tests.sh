@@ -52,7 +52,15 @@ if ! grep -q "^OK (" "$OUT/instrumentation.txt" && grep -q "RootViewWithoutFocus
   calm_device
   adb shell am instrument -w -r "$PKG.test/androidx.test.runner.AndroidJUnitRunner" | tr -d '\r' | tee "$OUT/instrumentation.txt"
 fi
-adb pull "/sdcard/Android/data/$PKG/files/screenshots/." "$OUT/screenshots/" >/dev/null 2>&1 || true
+# Android 11 can refuse a direct pull from Android/data, so fall back to copying the files
+# somewhere adb can always read, and note it if both fail.
+SHOTS="/sdcard/Android/data/$PKG/files/screenshots"
+adb pull "$SHOTS/." "$OUT/screenshots/" >/dev/null 2>&1 || true
+if ! ls "$OUT"/screenshots/*.png >/dev/null 2>&1; then
+  adb shell "rm -rf /data/local/tmp/shots && mkdir -p /data/local/tmp/shots && cp $SHOTS/*.png /data/local/tmp/shots/" >/dev/null 2>&1
+  adb pull /data/local/tmp/shots/. "$OUT/screenshots/" >/dev/null 2>&1 || true
+fi
+ls "$OUT"/screenshots/*.png >/dev/null 2>&1 || echo "Note: screenshots could not be copied off this emulator ($(adb shell ls "$SHOTS" 2>&1 | head -1 | tr -d '\r'))" >> "$STATUS"
 adb logcat -d -v brief AndroidRuntime:E ActivityManager:W "*:F" > "$OUT/logcat.txt" 2>/dev/null || true
 
 FAILED=0
