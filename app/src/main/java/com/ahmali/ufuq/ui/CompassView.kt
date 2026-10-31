@@ -19,12 +19,20 @@ import kotlin.math.sin
  */
 class CompassView(context: Context) : View(context) {
 
-    /** Phone heading, degrees from true north. */
+    /**
+     * Phone heading, degrees from true north. The dial glides to it on every display frame
+     * rather than jumping with each sensor reading, so it turns smoothly.
+     */
     var heading: Float = 0f
         set(v) {
             field = v
-            invalidate()
+            if (shownTime == 0L) shown = v
+            postInvalidateOnAnimation()
         }
+
+    /** Heading currently drawn, easing toward [heading]. */
+    private var shown = 0f
+    private var shownTime = 0L
 
     /** Qibla bearing, degrees from true north. */
     var bearing: Float = 0f
@@ -67,6 +75,18 @@ class CompassView(context: Context) : View(context) {
     }
 
     override fun onDraw(canvas: Canvas) {
+        // Ease toward the latest heading along the shorter way round (time-based, so it feels the
+        // same at 60 or 120 Hz). Tiny differences are ignored so the dial rests instead of trembling.
+        val now = android.os.SystemClock.uptimeMillis()
+        val dt = if (shownTime == 0L) 16f else (now - shownTime).coerceIn(1L, 100L).toFloat()
+        shownTime = now
+        val diff = ((heading - shown + 540f) % 360f) - 180f
+        if (kotlin.math.abs(diff) > 0.15f) {
+            shown = (shown + diff * (1f - kotlin.math.exp(-dt / 90f)) + 360f) % 360f
+            postInvalidateOnAnimation()
+        }
+        val heading = shown
+
         val k = width / 260f
         canvas.save()
         canvas.scale(k, k)

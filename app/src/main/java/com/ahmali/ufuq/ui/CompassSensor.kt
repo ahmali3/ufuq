@@ -52,12 +52,13 @@ class CompassSensor(private val context: Context, private val onUpdate: (heading
         haveG = false
         haveM = false
         if (rotation != null) {
-            sm.registerListener(this, rotation, SensorManager.SENSOR_DELAY_UI)
+            // GAME rate (~50 Hz) so the dial has fresh readings for every frame it animates.
+            sm.registerListener(this, rotation, SensorManager.SENSOR_DELAY_GAME)
             // Magnetometer only for its accuracy reports (calibration prompt).
             sm.registerListener(this, magnet, SensorManager.SENSOR_DELAY_NORMAL)
         } else {
-            sm.registerListener(this, accel, SensorManager.SENSOR_DELAY_UI)
-            sm.registerListener(this, magnet, SensorManager.SENSOR_DELAY_UI)
+            sm.registerListener(this, accel, SensorManager.SENSOR_DELAY_GAME)
+            sm.registerListener(this, magnet, SensorManager.SENSOR_DELAY_GAME)
         }
     }
 
@@ -91,7 +92,7 @@ class CompassSensor(private val context: Context, private val onUpdate: (heading
     }
 
     private fun lowPass(input: FloatArray, out: FloatArray, primed: Boolean) {
-        val a = if (primed) 0.15f else 1f
+        val a = if (primed) 0.1f else 1f
         for (i in 0..2) out[i] = out[i] + a * (input[i] - out[i])
     }
 
@@ -99,10 +100,11 @@ class CompassSensor(private val context: Context, private val onUpdate: (heading
         SensorManager.getOrientation(r, orientation)
         var heading = Math.toDegrees(orientation[0].toDouble()) + declination + displayRotation()
         heading = (heading + 360.0) % 360.0
-        // Smooth on the unit circle so 359° -> 1° doesn't spin the dial.
+        // Light noise filter on the unit circle (so 359° -> 1° doesn't spin the dial). The view
+        // does the visible smoothing, frame by frame.
         val rad = Math.toRadians(heading)
-        smoothSin += 0.2 * (sin(rad) - smoothSin)
-        smoothCos += 0.2 * (cos(rad) - smoothCos)
+        smoothSin += 0.25 * (sin(rad) - smoothSin)
+        smoothCos += 0.25 * (cos(rad) - smoothCos)
         val smoothed = (Math.toDegrees(atan2(smoothSin, smoothCos)) + 360.0) % 360.0
         onUpdate(smoothed.toFloat(), magAccuracy)
     }
