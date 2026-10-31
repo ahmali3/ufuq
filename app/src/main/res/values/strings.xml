@@ -216,6 +216,12 @@
     <string name="privacy_body">Ufuq collects nothing. Your location is used only on this phone to calculate times and the Qibla, and never leaves it. No internet access, no analytics, no ads, no accounts.</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="privacy_url">https://ahmali3.github.io/ufuq/privacy</string>
+    <string name="contact">Contact</string>
+    <string name="contact_body">Questions, feedback, or a time that looks off for your city? Get in touch.</string>
+    <string name="contact_email" translatable="false">ahmali.dev@gmail.com</string>
+    <string name="contact_email_desc">Email %1$s</string>
+    <string name="contact_subject">Ufuq feedback (version %1$s)</string>
+    <string name="contact_copied">Email address copied</string>
     <string name="credits">Credits</string>
     <string name="credits_body">City data © GeoNames, licensed under CC-BY 4.0.</string>
     <string name="made_by">Made by Ahmed Ali</string>
