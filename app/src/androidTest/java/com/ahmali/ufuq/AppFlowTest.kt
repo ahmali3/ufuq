@@ -252,5 +252,19 @@ class AppFlowTest {
         val bmp: Bitmap = InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot() ?: return
         val dir = File(ctx.getExternalFilesDir(null), "screenshots").apply { mkdirs() }
         FileOutputStream(File(dir, "$name.png")).use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+        // Also save a copy where adb can always read it (some Android 11 images block
+        // adb from the app's own storage folder).
+        shell("mkdir -p $SHELL_SHOTS")
+        shell("screencap -p $SHELL_SHOTS/$name.png")
+    }
+
+    /** Runs a shell command as the shell user and waits for it to finish. */
+    private fun shell(cmd: String) {
+        val pfd = InstrumentationRegistry.getInstrumentation().uiAutomation.executeShellCommand(cmd)
+        android.os.ParcelFileDescriptor.AutoCloseInputStream(pfd).use { it.readBytes() }
+    }
+
+    private companion object {
+        const val SHELL_SHOTS = "/data/local/tmp/ufuq-shots"
     }
 }

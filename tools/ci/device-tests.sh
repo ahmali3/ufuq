@@ -28,6 +28,7 @@ adb shell settings put global window_animation_scale 0
 adb shell settings put global transition_animation_scale 0
 adb shell settings put global animator_duration_scale 0
 adb logcat -c || true
+adb shell rm -rf /data/local/tmp/ufuq-shots >/dev/null 2>&1 || true
 
 # Emulators sometimes show "System UI / Launcher isn't responding" boxes that steal focus
 # from the app under test. Hide them and let the home screen settle first.
@@ -60,11 +61,9 @@ if ! ls "$OUT"/screenshots/*.png >/dev/null 2>&1; then
   adb shell "rm -rf /data/local/tmp/shots && mkdir -p /data/local/tmp/shots && cp $SHOTS/*.png /data/local/tmp/shots/" >/dev/null 2>&1
   adb pull /data/local/tmp/shots/. "$OUT/screenshots/" >/dev/null 2>&1 || true
 fi
-# Last resort: read them as the (debuggable) app itself, which can always see its own folder.
+# Last resort: the copies the tests also save with screencap, where adb can always read.
 if ! ls "$OUT"/screenshots/*.png >/dev/null 2>&1; then
-  for f in $(adb shell run-as "$PKG" ls "$SHOTS" 2>/dev/null | tr -d '\r' | grep '\.png$'); do
-    adb exec-out run-as "$PKG" cat "$SHOTS/$f" > "$OUT/screenshots/$f" 2>/dev/null || rm -f "$OUT/screenshots/$f"
-  done
+  adb pull /data/local/tmp/ufuq-shots/. "$OUT/screenshots/" >/dev/null 2>&1 || true
 fi
 ls "$OUT"/screenshots/*.png >/dev/null 2>&1 || echo "Note: screenshots could not be copied off this emulator ($(adb shell ls "$SHOTS" 2>&1 | head -1 | tr -d '\r'))" >> "$STATUS"
 adb logcat -d -v brief AndroidRuntime:E ActivityManager:W "*:F" > "$OUT/logcat.txt" 2>/dev/null || true
